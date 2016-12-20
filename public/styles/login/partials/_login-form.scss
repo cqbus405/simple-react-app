@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$roboto: 'Roboto', sans-serif;
+$font-color-input: #616161;
+$font-color-button: #FAFAFA;
+$border-color: #FF99CC;
+
+.login-form__input {
+  width: 270px;
+  height: 28px;
+  padding: 8px;
+  margin-bottom: 8px;
+  font-family: $roboto;
+  color: $font-color-input;
+  font-size: 10pt;
+  background-color: transparent;
+  border: 1px solid black;
+  outline: none;
+}
+
+.login-form__input:hover {
+  outline: 2px solid $border-color;
+}
+
+.login-form__submit {
+  width: 288px;
+  height: 44px;
+  border: none;
+  background-color: black;
+  color: $font-color-button;
+  outline: none;
+  font-family: $roboto;
+  transition-duration: 0.4s;
+}
+
+.login-form__submit:hover {
+  background-color: gray;
+}

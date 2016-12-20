@@ -11,8 +11,8 @@ import {
 import {
   render
 } from 'react-dom'
-
 import LoginPage from './containers/LoginPage'
+import '../build/styles/main.css'
 
 render(
   <Provider store={store}>

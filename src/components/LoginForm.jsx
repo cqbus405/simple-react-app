@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-export default class LoginItem extends Component {
+export default class LoginForm extends Component {
   constructor(props) {
     super(props)
 
@@ -17,9 +17,11 @@ export default class LoginItem extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Email" name="email" onChange={this.handleEmailChange} />
-        <input type="password" placeholder="Password" name="password" onChange={this.handlePasswordChange} />
-        <input type="submit" value="Login" />
+        <input className="login-form__input" type="text" placeholder="Email" name="email" onChange={this.handleEmailChange} />
+        <br />
+        <input className="login-form__input" type="password" placeholder="Password" name="password" onChange={this.handlePasswordChange} />
+        <br />
+        <input className="login-form__submit" type="submit" value="Login" />
       </form>
     )
   }
@@ -38,6 +40,10 @@ export default class LoginItem extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    alert(`Email: ${this.state.email}\nPassword: ${this.state.password}`)
+    this.props.onSubmit(this.state.email, this.state.password)
   }
+}
+
+LoginForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired
 }
