@@ -4,12 +4,12 @@ export default class Message extends Component {
   render() {
     return (
       <div>
-        <p>{this.props.msg}</p>
+        <p className="login-error__msg">{this.props.errorMsg}</p>
       </div>
     )
   }
 }
 
 Message.propTypes = {
-  msg: PropTypes.string.isRequired
+  errorMsg: PropTypes.string.isRequired
 }

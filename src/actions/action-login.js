@@ -53,6 +53,10 @@ const login = loginInfo => dispatch => {
     })
     .then(response => checkStatus(response))
     .then(response => parseJSON(response))
+    .then(data => {
+      console.log('data: ' + JSON.stringify(data))
+      return data
+    })
     .then(data => dispatch(receiveLoginFeedback(data)))
     .catch(error => {
       console.log('request failed', error)

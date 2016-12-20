@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$roboto: 'Roboto', sans-serif;
+
+.login-error__msg {
+  color: red;
+  font-size: 8pt;
+  font-family: $roboto
+}

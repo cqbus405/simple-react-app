@@ -17,9 +17,9 @@ let loginFeedback = (state = {
       return {
         ...state,
         isFetching: false,
-        user: action.feedback.data.user,
+        user: action.feedback.data ? action.feedback.data.user : null,
         status: action.feedback.status,
-        msg: action.feedback.msg,
+        msg: action.feedback.msg ? action.feedback.msg : 'Unknow error',
         requestedAt: action.receivedAt
       }
 
