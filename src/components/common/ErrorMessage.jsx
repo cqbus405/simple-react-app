@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 
-export default class Message extends Component {
+export default class ErrorMessage extends Component {
   render() {
     return (
       <div>
@@ -10,6 +10,6 @@ export default class Message extends Component {
   }
 }
 
-Message.propTypes = {
+ErrorMessage.propTypes = {
   errorMsg: PropTypes.string.isRequired
 }

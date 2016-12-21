@@ -1,6 +1,9 @@
 import * as types from '../constants/ActionTypes'
 import * as api from '../constants/API'
 import 'whatwg-fetch'
+import {
+  browserHistory
+} from 'react-router'
 
 const requestLogin = () => {
   return {
@@ -39,8 +42,6 @@ const parseJSON = response => response.json()
 const login = loginInfo => dispatch => {
   dispatch(requestLogin(loginInfo))
 
-  console.log('email: ' + loginInfo.email + ', pwd: ' + loginInfo.password)
-
   return fetch(api.ENDPOINT_USER_LOGIN, {
       method: 'POST',
       headers: {
@@ -53,11 +54,12 @@ const login = loginInfo => dispatch => {
     })
     .then(response => checkStatus(response))
     .then(response => parseJSON(response))
-    .then(data => {
-      console.log('data: ' + JSON.stringify(data))
-      return data
+    .then(feedback => {
+      dispatch(receiveLoginFeedback(feedback))
+      if (feedback.status === 200) {
+        browserHistory.push('/products') //登录成功后页面转跳
+      }
     })
-    .then(data => dispatch(receiveLoginFeedback(data)))
     .catch(error => {
       console.log('request failed', error)
     })

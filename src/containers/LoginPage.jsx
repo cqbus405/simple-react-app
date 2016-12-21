@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import Indicator from '../components/Indicator'
-import LoginForm from '../components/LoginForm'
-import Message from '../components/Message'
+import Indicator from '../components/common/Indicator'
+import LoginForm from '../components/login/LoginForm'
+import ErrorMessage from '../components/common/ErrorMessage'
 import { connect } from 'react-redux'
 import img_gun from '../../public/images/gun.jpg'
 import { doLoginIfNeeded } from '../actions/action-login'
@@ -17,7 +17,7 @@ class LoginPage extends Component {
     return (
       <div className="login-page__wrapper">
         <img className="login-page__img" src={img_gun} alt="gun" />
-        {this.props.loginFeedback.status === 500 ? <Message errorMsg={this.props.loginFeedback.msg} /> : null}
+        {this.props.loginFeedback.status === 500 ? <ErrorMessage errorMsg={this.props.loginFeedback.msg} /> : null}
         <LoginForm onSubmit={this._login} />
         {this.props.loginFeedback.isFetching ? <Indicator /> : null}
       </div>
@@ -29,6 +29,10 @@ class LoginPage extends Component {
       email,
       password
     }))
+
+    if (this.props.loginFeedback.status === 200) {
+      this.context.router.push('/products')
+    }
   }
 }
 
@@ -36,6 +40,10 @@ LoginPage.propTypes = {
   status: PropTypes.number,
   msg: PropTypes.string,
   isFetching: PropTypes.bool
+}
+
+LoginPage.contextTypes = {
+  router: PropTypes.object
 }
 
 function mapStateToProps(state) {

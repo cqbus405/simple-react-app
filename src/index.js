@@ -12,12 +12,14 @@ import {
   render
 } from 'react-dom'
 import LoginPage from './containers/LoginPage'
+import ProductsPage from './containers/ProductsPage'
 import '../build/styles/main.css'
 
 render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path='/login' component={LoginPage} />
+      <Route path='/products' component={ProductsPage} />
     </Router>
   </Provider>,
   document.getElementById('root')
