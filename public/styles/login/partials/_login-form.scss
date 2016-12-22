@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-$roboto: 'Roboto', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
 $font-color-input: #616161;
 $font-color-button: #FAFAFA;
 $border-color: #FF99CC;
@@ -10,7 +10,7 @@ $border-color: #FF99CC;
   height: 28px;
   padding: 8px;
   margin-bottom: 8px;
-  font-family: $roboto;
+  font-family: $open-sans;
   color: $font-color-input;
   font-size: 10pt;
   background-color: transparent;
@@ -29,7 +29,7 @@ $border-color: #FF99CC;
   background-color: black;
   color: $font-color-button;
   outline: none;
-  font-family: $roboto;
+  font-family: $open-sans;
   transition-duration: 0.4s;
 }
 

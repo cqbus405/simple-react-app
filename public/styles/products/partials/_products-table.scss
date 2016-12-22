@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+$roboto: 'Roboto', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+
+.products-table {
+  overflow-x: auto;
+
+  table {
+    border-collapse: collapse;
+    width: 60%;
+    margin: 0 auto;
+
+    th, td {
+      text-align: left;
+      padding: 16px;
+      font-size: 9pt;
+      font-family: $open-sans;
+    }
+
+    tr:nth-child(even) {
+      background-color: #F2F2F2;
+    }
+
+    th {
+      background-color: black;
+      color: white;
+      font-family: $roboto;
+    }
+
+    td {
+      button {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid black;
+        background-color: transparent;
+        outline: none;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        font-family: $open-sans;
+      }
+
+      button:hover {
+        background-color: black;
+        color: white;
+      }
+
+      button:after {
+          content: "";
+          background: #F1F1F1;
+          display: block;
+          position: absolute;
+          padding-top: 300%;
+          padding-left: 350%;
+          margin-left: -20px !important;
+          margin-top: -120%;
+          opacity: 0;
+          transition: all 0.8s
+      }
+
+      button:active:after {
+          padding: 0;
+          margin: 0;
+          opacity: 1;
+          transition: 0s
+      }
+    }
+  }
+}

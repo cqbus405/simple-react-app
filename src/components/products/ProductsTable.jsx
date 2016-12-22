@@ -1,27 +1,23 @@
 import React, { Component, PropTypes } from 'react'
+import ProductItem from './ProductItem';
 
 class ProductsTable extends Component {
   render() {
     const { products } = this.props
 
     return (
-      <div>
-        <p>{JSON.stringify(products)}</p>
+      <div className="products-table">
         <table>
-          <tr>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>CREATED</th>
-            <th>MODIFIED</th>
-          </tr>
-          {products.map((product, i) => 
+          <tbody>
             <tr>
-              <th>{product.id}</th>
-              <th>{product.name}</th>
-              <th>{product.created}</th>
-              <th>{product.modified}</th>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Created</th>
+              <th>Modified</th>
+              <th></th>
             </tr>
-          )}
+            {products ? products.map((product, id) => <ProductItem key={id} product={product} />) : null}
+          </tbody>
         </table>
       </div>
     )
