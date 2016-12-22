@@ -1,40 +1,38 @@
 import * as types from '../constants/ActionTypes'
 
-const loginFeedback = (state = {
+export const productsInfo = (state = {
   isFetching: false,
   status: null,
   msg: null,
-  user: null
+  products: null
 }, action) => {
   switch (action.type) {
-    case types.REQUEST_LOGIN:
+    case types.REQUEST_PRODUCTS:
       return {
         ...state,
         isFetching: true
       }
 
-    case types.RECEIVE_LOGIN_FEEDBACK:
+    case types.RECEIVE_PRODUCTS:
       return {
         ...state,
         isFetching: false,
-        user: action.feedback.data ? action.feedback.data.user : null,
         status: action.feedback.status,
         msg: action.feedback.msg ? action.feedback.msg : 'Unknown error',
-        requestedAt: action.receivedAt
+        products: action.feedback.data ? action.feedback.data : null,
+        receivedAt: action.receivedAt
       }
 
-    case types.HANDLE_LOGIN_ERROR:
+    case types.HANDLE_FETCH_PRODUCTS_ERROR:
       return {
         ...state,
         isFetching: false,
         status: 500,
         msg: action.errMsg,
-        requestedAt: action.receivedAt
+        receivedAt: action.receivedAt
       }
 
     default:
       return state
   }
 }
-
-export default loginFeedback

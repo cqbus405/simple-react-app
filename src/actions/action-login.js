@@ -4,6 +4,9 @@ import 'whatwg-fetch'
 import {
   browserHistory
 } from 'react-router'
+import {
+  setToken
+} from '../utils/util-auth'
 
 const requestLogin = () => {
   return {
@@ -39,8 +42,16 @@ const checkStatus = response => {
 
 const parseJSON = response => response.json()
 
+const handleError = () => {
+  return {
+    type: types.HANDLE_LOGIN_ERROR,
+    errMsg: 'Login error',
+    receivedAt: Date.now()
+  }
+}
+
 const login = loginInfo => dispatch => {
-  dispatch(requestLogin(loginInfo))
+  dispatch(requestLogin())
 
   return fetch(api.ENDPOINT_USER_LOGIN, {
       method: 'POST',
@@ -57,11 +68,14 @@ const login = loginInfo => dispatch => {
     .then(feedback => {
       dispatch(receiveLoginFeedback(feedback))
       if (feedback.status === 200) {
+        let token = feedback.data.user.token
+        setToken(token)
         browserHistory.push('/products') //登录成功后页面转跳
       }
     })
     .catch(error => {
-      console.log('request failed', error)
+      dispatch(handleError())
+      console.log(error)
     })
 }
 

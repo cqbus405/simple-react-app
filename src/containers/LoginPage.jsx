@@ -29,10 +29,6 @@ class LoginPage extends Component {
       email,
       password
     }))
-
-    if (this.props.loginFeedback.status === 200) {
-      this.context.router.push('/products')
-    }
   }
 }
 
@@ -40,10 +36,6 @@ LoginPage.propTypes = {
   status: PropTypes.number,
   msg: PropTypes.string,
   isFetching: PropTypes.bool
-}
-
-LoginPage.contextTypes = {
-  router: PropTypes.object
 }
 
 function mapStateToProps(state) {

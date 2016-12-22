@@ -1,24 +1,38 @@
 import React, { Component, PropTypes } from 'react'
 import ProductsTable from '../components/products/ProductsTable'
 import { connect } from 'react-redux'
+import { fetchProductsIfNeeded } from '../actions/action-products'
+import { getToken } from '../utils/util-auth'
 
 class ProductsPage extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props
+    const token = getToken()
+    dispatch(fetchProductsIfNeeded({
+      page: 1,
+      count: 10,
+      token: token
+    }))
+  }
+
   render() {
     return (
       <div>
-        <ProductsTable userInfo={this.props.userInfo} />
+        <ProductsTable products={this.props.products} />
       </div>
     )
   }
 }
 
 ProductsPage.propTypes = {
-  userInfo: PropTypes.object
+  products: PropTypes.arrayOf(
+    PropTypes.object
+  )
 }
 
 const mapStateToProps = state => {
   return {
-    userInfo: state.loginFeedback.user
+    products: state.productsInfo.products
   }
 }
 
