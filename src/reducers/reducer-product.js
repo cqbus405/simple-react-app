@@ -4,7 +4,7 @@ export const productsInfo = (state = {
   isFetching: false,
   status: null,
   msg: null,
-  products: null
+  data: null
 }, action) => {
   switch (action.type) {
     case types.REQUEST_PRODUCTS:
@@ -19,7 +19,7 @@ export const productsInfo = (state = {
         isFetching: false,
         status: action.feedback.status,
         msg: action.feedback.msg ? action.feedback.msg : 'Unknown error',
-        products: action.feedback.data ? action.feedback.data : null,
+        data: action.feedback.data ? action.feedback.data : null,
         receivedAt: action.receivedAt
       }
 
