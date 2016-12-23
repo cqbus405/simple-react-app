@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$open-sans: 'Open Sans', sans-serif;
+
+.pagination {
+  width: 80%;
+  margin: 48px auto;
+  text-align: center;
+
+  ul {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    font-size: 8pt;
+    font-family: $open-sans;
+
+    li {
+      display: inline;
+
+      button {
+        color: black;
+        float: left;
+        padding: 6px 12px;
+        text-decoration: none;
+        transition: background-color .4s;
+        border: none;
+        background-color: transparent;
+        outline: none;
+      }
+
+      button.active {
+        background-color: #FF99CC;
+        color: white;
+      }
+
+      button:hover:not(.active) {
+        background-color: #DDD;
+      }
+    }
+  }
+}

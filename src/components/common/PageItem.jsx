@@ -5,13 +5,13 @@ class PageItem extends Component {
     const { i } = this.props
 
     return (
-      <li>{i}</li>
+      <li><button className={i === 1 ? 'active' : ''}>{i}</button></li>
     )
   }
 }
 
 PageItem.propTypes = {
-  i: PropTypes.i
+  i: PropTypes.number
 }
 
 export default PageItem

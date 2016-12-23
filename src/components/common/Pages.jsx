@@ -6,11 +6,13 @@ class Pages extends Component {
     const { total, arr } = this.props
 
     return (
-      <ul>
-        <li><a href="#">«</a></li>
-        {arr ? arr.map(i => <PageItem i={i} />) : null}
-        <li><a href="#">»</a></li>
-      </ul>
+      <div className="pagination">
+        <ul>
+          <li><button>«</button></li>
+          {arr ? arr.map((i, key) => <PageItem i={i} key={key} />) : null}
+          <li><button>»</button></li>
+        </ul>
+      </div>
     )
   }
 }

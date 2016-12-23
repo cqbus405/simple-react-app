@@ -12,7 +12,7 @@ class ProductsPage extends Component {
     const token = getToken()
     dispatch(fetchProductsIfNeeded({
       page: 1,
-      count: 10,
+      count: 15,
       token: token
     }))
   }
@@ -21,15 +21,13 @@ class ProductsPage extends Component {
     const { total, products } = this.props
     let arr = []
     for(let i = 1; i <= total; ++i) {
-      arr[i - 1] = i
+      arr.push(i)
     }
-
-    console.log('===> arr: ' + arr)
 
     return (
       <div>
         <ProductsTable products={products} />
-        {this.props.total !== 0 ? <Pages total={total} arr={arr} /> : <Message msg='No item' />}
+        {total !== 0 ? <Pages total={total} arr={arr} /> : <Message msg='No item' />}
       </div>
     )
   }
@@ -44,8 +42,8 @@ ProductsPage.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    products: state.productInfo ? state.productsInfo.data.products : null,
-    total: state.productInfo ? state.productsInfo.data.total : 0
+    products: state.productsInfo.data ? state.productsInfo.data.products : null,
+    total: state.productsInfo.data ? state.productsInfo.data.total : 0
   }
 }
 
