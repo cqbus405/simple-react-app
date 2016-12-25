@@ -7,7 +7,7 @@ let requestParam
 let receiveParam
 let fetchParam
 
-export const fetchIfNeeded = (types, params) => {
+export const fetchIfNeeded = callback => {
 
 }
 
@@ -87,25 +87,25 @@ export setFetchParam = (url, method, token, body, paramArr) => {
 
     url += finalParam
 
-    params.url = url
+    fetchParam.url = url
   }
 
   if (!method) {
     console.log('Invalid method.')
   }
-  params.method = method
+  fetchParam.method = method
 
   if (!token) {
     console.log('Invalid url')
   }
-  params.token = token
+  fetchParam.token = token
 
   if (!body) {
     console.log('Invalid url')
   }
-  params.body = body
+  fetchParam.body = body
 
-  return params
+  params.fetchParam = fetchParam
 }
 
 export setRequestParam = (action, param) => {
@@ -113,6 +113,8 @@ export setRequestParam = (action, param) => {
     action,
     param
   }
+
+  params.requestParam = requestParam
 }
 
 export setReceiveParam = (action, param) => {
@@ -120,4 +122,6 @@ export setReceiveParam = (action, param) => {
     action,
     param
   }
+
+  params.receiveParam = receiveParam
 }
