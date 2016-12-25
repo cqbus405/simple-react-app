@@ -4,7 +4,7 @@ import LoginForm from '../components/login/LoginForm'
 import ErrorMessage from '../components/common/ErrorMessage'
 import { connect } from 'react-redux'
 import img_gun from '../../public/images/gun.jpg'
-import { doLoginIfNeeded } from '../actions/action-login'
+import { doLoginIfNeeded } from '../actions/action-user'
 
 class LoginPage extends Component {
   constructor(props) {
