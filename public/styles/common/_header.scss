@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$open-sans: 'Open Sans', sans-serif;
+
+.header-style {
+  width: 85%;
+  margin: 0 auto;
+  padding: 16px 0;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  li {
+    float: left;
+    font-family: $open-sans;
+    display: inline;
+
+    button {
+      background-color: transparent;
+      border: 1px solid black;
+      margin-left: 6px; 
+      font-family: $open-sans;
+      transition: background-color 0.4s;
+      outline: none;
+      text-decoration: none;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+
+    button:hover {
+      background-color: black;
+      color: white;
+    }
+
+    button:after {
+      content: "";
+      background: #f1f1f1;
+      display: block;
+      position: absolute;
+      padding-top: 300%;
+      padding-left: 350%;
+      margin-left: -20px !important;
+      margin-top: -120%;
+      opacity: 0;
+      transition: all 0.8s
+    }
+
+    button:active:after {
+      padding: 0;
+      margin: 0;
+      opacity: 1;
+      transition: 0s
+    }
+  }
+
+  .button-container {
+    float: right;
+  }
+}
