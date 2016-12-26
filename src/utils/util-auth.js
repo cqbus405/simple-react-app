@@ -1,13 +1,3 @@
-export const setToken = (token) => {
-  localStorage.t = token
-}
-
-export const getToken = () => {
-  if (localStorage.t) {
-    return localStorage.t
-  }
-}
-
 export const logout = () => {
   if (localStorage.t) {
     delete localStorage.t
@@ -16,4 +6,18 @@ export const logout = () => {
 
 export const loggedIn = () => {
   return !!localStorage.t
+}
+
+export const setUserInfo = userInfo => {
+  const userInfoStr = JSON.stringify(userInfo)
+  localStorage.u = userInfoStr
+}
+
+export const getUserInfo = () => {
+  const userInfoStr = localStorage.u
+
+  if (userInfoStr) {
+    const userInfoObj = JSON.parse(userInfoStr)
+    return userInfoObj
+  }
 }

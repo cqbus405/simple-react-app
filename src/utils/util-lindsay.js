@@ -7,11 +7,13 @@ let requestParam
 let receiveParam
 let fetchParam
 
-export const fetchIfNeeded = callback => {
-
+export const fetchIfNeeded = (fetching, cb) => (getState, dispatch) => {
+  if (shouldFetch(fetching)) {
+    return dispatch(fetch(cb))
+  }
 }
 
-const shouldFetch = (fetching) => {
+const shouldFetch = fetching => {
   if (fetching) {
     return false
   }
@@ -19,23 +21,40 @@ const shouldFetch = (fetching) => {
   return true
 }
 
-const fetch = params => dispatch => {
-  dispatch(request(params.requestType, params.requestParam))
+const fetch = cb => dispatch => {
+  dispatch(request(requestParam.action, requestParam.param))
 
-  return fetch()
+  return fetch(fetchParam.url, {
+      method: fetchParam.method,
+      headers: {
+        Authorization: `bearer ${fetchParam.token}`
+      },
+      body: JSON.stringify(fetchParam.body)
+    })
+    .then(response => checkStatus(response))
+    .then(response => parseJSON(response))
+    .then(feedback => {
+      dispatch(receive(receiveParam.action, feedback))
+      const status = feedback.status
+      cb(null, status)
+    })
+    .catch(error => {
+      dispatch(handleError())
+      console.log(error)
+    })
 }
 
 const request = (type, param) => {
   return {
-    action: type,
+    type
     feedback: param
   }
 }
 
-const receive = (type, param) => {
+const receive = (type, feedback) => {
   return {
-    action: type,
-    feedback: param,
+    type,
+    feedback,
     receivedAt: getCurrentTime('YYYY-DD-MM hh:mm:ss a')
   }
 }
@@ -52,10 +71,10 @@ const checkStatus = response => {
 
 const parseJSON = response => response.json()
 
-const handleError = (type, param) => {
+const handleError = (type, errMsg) => {
   return {
-    type: types,
-    errMsg: param,
+    type,
+    errMsg,
     receivedAt: getCurrentTime('YYYY-DD-MM hh:mm:ss a')
   }
 }

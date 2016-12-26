@@ -10,7 +10,7 @@ class ProductItem extends Component {
         <td>{product.name}</td>
         <td>{product.created}</td>
         <td>{product.modified}</td>
-        <td><button>Edit</button></td>
+        <td><button>Detail</button></td>
       </tr>
     )
   }

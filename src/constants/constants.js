@@ -5,3 +5,4 @@ export const pageConst = {
 }
 
 export const PAGE_ITEM_COUNT = 15
+export const RECEIVED_AT_FORMAT = 'YYYY-MM-DD hh:m:ssa'

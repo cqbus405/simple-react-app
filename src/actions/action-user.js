@@ -1,33 +1,31 @@
 import * as types from '../constants/ActionTypes'
 import * as api from '../constants/API'
+import * as constants from '../constants/constants'
 import 'whatwg-fetch'
 import {
   browserHistory
 } from 'react-router'
 import {
-  setToken
+  setUserInfo,
+  getUserInfo
 } from '../utils/util-auth'
+import {
+  getCurrentTime
+} from '../utils/util-general'
 
-const requestLogin = () => {
+const request = (type, param) => {
   return {
-    type: types.REQUEST_LOGIN
+    type,
+    param
   }
 }
 
-const receiveLoginFeedback = feedback => {
+const receive = (type, feedback) => {
   return {
-    type: types.RECEIVE_LOGIN_FEEDBACK,
+    type,
     feedback,
-    receivedAt: Date.now()
+    receivedAt: getCurrentTime(constants.RECEIVED_AT_FORMAT)
   }
-}
-
-const shouldLogin = (state) => {
-  const loginFeedback = state.loginFeedback
-  if (loginFeedback.isFetching) {
-    return false
-  }
-  return true
 }
 
 const checkStatus = response => {
@@ -42,16 +40,24 @@ const checkStatus = response => {
 
 const parseJSON = response => response.json()
 
-const handleError = () => {
+const handleError = (type, errMsg) => {
   return {
-    type: types.HANDLE_LOGIN_ERROR,
-    errMsg: 'Login error',
-    receivedAt: Date.now()
+    type,
+    errMsg,
+    receivedAt: getCurrentTime(constants.RECEIVED_AT_FORMAT)
   }
 }
 
+const fetching = state => {
+  const user = state.user
+  if (user.isFetching) {
+    return false
+  }
+  return true
+}
+
 const login = loginInfo => dispatch => {
-  dispatch(requestLogin())
+  dispatch(request(types.REQUEST_LOGIN))
 
   return fetch(api.ENDPOINT_USER_LOGIN, {
       method: 'POST',
@@ -66,21 +72,58 @@ const login = loginInfo => dispatch => {
     .then(response => checkStatus(response))
     .then(response => parseJSON(response))
     .then(feedback => {
-      dispatch(receiveLoginFeedback(feedback))
+      dispatch(receive(types.RECEIVE_LOGIN_FEEDBACK, feedback))
       if (feedback.status === 200) {
-        let token = feedback.data.user.token
-        setToken(token)
+        const token = feedback.data.user.token
+        const name = feedback.data.user.name
+        const userInfo = {
+          token: token,
+          name: name
+        }
+        setUserInfo(userInfo)
         browserHistory.push('/products') //登录成功后页面转跳
       }
     })
     .catch(error => {
-      dispatch(handleError())
+      dispatch(handleError(types.HANDLE_LOGIN_ERROR, 'Login error'))
+      console.log(error)
+    })
+}
+
+const logout = () => dispatch => {
+  dispatch(request(types.REQUEST_LOGOUT))
+
+  const token = getUserInfo().token
+
+  return fetch(api.ENDPOINT_USER_LOGOUT, {
+      method: 'POST',
+      headers: {
+        'Authorization': `bearer ${token}`
+      }
+    })
+    .then(response => checkStatus(response))
+    .then(response => parseJSON(response))
+    .then(feedback => {
+      dispatch(receive(types.RECEIVE_LOGOUT_FEEDBACK, feedback))
+      if (feedback.status === 200) {
+        setUserInfo(null)
+        browserHistory.push('/login')
+      }
+    })
+    .catch(error => {
+      dispatch(handleError(types.HANDLE_LOGOUT_ERROR, 'Logout error'))
       console.log(error)
     })
 }
 
 export const doLoginIfNeeded = loginInfo => (dispatch, getState) => {
-  if (shouldLogin(getState())) {
+  if (fetching(getState())) {
     return dispatch(login(loginInfo))
+  }
+}
+
+export const doLogoutIfNeeded = () => (dispatch, getState) => {
+  if (fetching(getState())) {
+    return dispatch(logout())
   }
 }

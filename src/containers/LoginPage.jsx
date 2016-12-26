@@ -40,7 +40,7 @@ LoginPage.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    loginFeedback: state.loginFeedback
+    loginFeedback: state.user
   }
 }
 

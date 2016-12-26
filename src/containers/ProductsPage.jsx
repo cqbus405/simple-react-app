@@ -2,7 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import ProductsTable from '../components/products/ProductsTable'
 import { connect } from 'react-redux'
 import { fetchProductsIfNeeded } from '../actions/action-products'
-import { getToken } from '../utils/util-auth'
+import { doLogoutIfNeeded } from '../actions/action-user'
+import { getUserInfo } from '../utils/util-auth'
 import { getCurrentPage } from '../utils/util-pagination'
 import Pages from '../components/common/Pages'
 import Message from '../components/common/Message'
@@ -18,7 +19,7 @@ class ProductsPage extends Component {
   }
 
   render() {
-    const { pages, products, handlePageBtnClick } = this.props
+    const { pages, products, handlePageBtnClick, handleLogoutBtnClick } = this.props
     let arr = []
     for(let i = 1; i <= pages; ++i) {
       arr.push(i)
@@ -26,7 +27,7 @@ class ProductsPage extends Component {
 
     return (
       <div>
-        <Header />
+        <Header handleLogoutBtnClick={handleLogoutBtnClick} />
         <ProductsTable products={products} />
         {pages !== 0 ? <Pages pages={pages} arr={arr} handlePageBtnClick={handlePageBtnClick} /> : <Message msg='No item' />}
       </div>
@@ -55,12 +56,18 @@ const mapDispatchToProps = dispatch => {
       let currentPage = getCurrentPage(action, pages, page)
 
       if (currentPage != 0) {
+        const userInfo = getUserInfo()
+        const token = userInfo.token
+
         dispatch(fetchProductsIfNeeded({
           page: currentPage,
           count: PAGE_ITEM_COUNT,
-          token: getToken()
+          token: token
         }))
       }
+    },
+    handleLogoutBtnClick: () => {
+      dispatch(doLogoutIfNeeded())
     }
   }
 }

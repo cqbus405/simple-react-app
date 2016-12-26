@@ -5,7 +5,7 @@ import {
   createStore,
   compose
 } from 'redux'
-import loginFeedback from '../reducers/reducer-login'
+import user from '../reducers/reducer-user'
 import {
   productsInfo
 } from '../reducers/reducer-product'
@@ -21,7 +21,7 @@ const middleware = applyMiddleware(
 )
 
 const rootReducer = combineReducers({
-  loginFeedback,
+  user,
   productsInfo
 })
 
