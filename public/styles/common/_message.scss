@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$open-sans: 'Open Sans', sans-serif;
+
+.message {
+  text-align: center;
+
+  p {
+    padding: 256px;
+    font-family: $open-sans;
+    font-size: 14pt;
+  }
+}

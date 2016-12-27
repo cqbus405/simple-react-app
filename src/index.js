@@ -13,6 +13,7 @@ import {
 } from 'react-dom'
 import LoginPage from './containers/LoginPage'
 import ProductsPage from './containers/ProductsPage'
+import ProductPage from './containers/ProductPage'
 import '../build/styles/main.css'
 
 render(
@@ -20,6 +21,7 @@ render(
     <Router history={browserHistory}>
       <Route path='/login' component={LoginPage} />
       <Route path='/products' component={ProductsPage} />
+      <Route path='/product' component={ProductPage} />
     </Router>
   </Provider>,
   document.getElementById('root')

@@ -8,6 +8,7 @@ import { getCurrentPage } from '../utils/util-pagination'
 import Pages from '../components/common/Pages'
 import Message from '../components/common/Message'
 import Header from '../components/common/Header'
+import Indicator2 from '../components/common/Indicator2'
 import { PAGE_ITEM_COUNT } from '../constants/constants'
 
 class ProductsPage extends Component {
@@ -19,7 +20,7 @@ class ProductsPage extends Component {
   }
 
   render() {
-    const { pages, products, handlePageBtnClick, handleLogoutBtnClick } = this.props
+    const { pages, products, handlePageBtnClick, handleLogoutBtnClick, fetching } = this.props
     let arr = []
     for(let i = 1; i <= pages; ++i) {
       arr.push(i)
@@ -29,7 +30,7 @@ class ProductsPage extends Component {
       <div>
         <Header handleLogoutBtnClick={handleLogoutBtnClick} />
         <ProductsTable products={products} />
-        {pages !== 0 ? <Pages pages={pages} arr={arr} handlePageBtnClick={handlePageBtnClick} /> : <Message msg='No item' />}
+        {fetching ? <Indicator2 /> : (pages !== 0 ? <Pages pages={pages} arr={arr} handlePageBtnClick={handlePageBtnClick} /> : <Message msg='No item' />)}
       </div>
     )
   }
@@ -40,13 +41,15 @@ ProductsPage.propTypes = {
     PropTypes.object
   ),
   pages: PropTypes.number,
-  handlePageBtnClick: PropTypes.func
+  handlePageBtnClick: PropTypes.func,
+  fetching: PropTypes.bool
 }
 
 const mapStateToProps = state => {
   return {
-    products: state.productsInfo.data ? state.productsInfo.data.products : null,
-    pages: state.productsInfo.data ? state.productsInfo.data.pages : 0
+    products: state.products.data ? state.products.data.products : null,
+    pages: state.products.data ? state.products.data.pages : 0,
+    fetching: state.products.isFetching
   }
 }
 

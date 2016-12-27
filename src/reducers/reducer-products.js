@@ -1,19 +1,19 @@
 import * as types from '../constants/ActionTypes'
 
-export const product = (state = {
+export const products = (state = {
   isFetching: false,
   status: null,
   msg: null,
   data: null
 }, action) => {
   switch (action.type) {
-    case types.REQUEST_PRODUCT:
+    case types.REQUEST_PRODUCTS:
       return {
         ...state,
         isFetching: true
       }
 
-    case types.RECEIVE_PRODUCT:
+    case types.RECEIVE_PRODUCTS:
       return {
         ...state,
         isFetching: false,
@@ -23,7 +23,7 @@ export const product = (state = {
         receivedAt: action.receivedAt
       }
 
-    case types.HANDLE_FETCH_PRODUCT_ERROR:
+    case types.HANDLE_FETCH_PRODUCTS_ERROR:
       return {
         ...state,
         isFetching: false,

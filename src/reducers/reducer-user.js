@@ -17,9 +17,9 @@ const user = (state = {
       return {
         ...state,
         isFetching: false,
-        user: action.feedback.data ? action.feedback.data.user : null,
-        status: action.feedback.status,
-        msg: action.feedback.msg ? action.feedback.msg : 'Unknown error',
+        user: action.response.data ? action.response.data.user : null,
+        status: action.response.status,
+        msg: action.response.msg ? action.response.msg : 'Unknown error',
         requestedAt: action.receivedAt
       }
 
@@ -43,8 +43,8 @@ const user = (state = {
         ...state,
         isFetching: false,
         user: null,
-        status: action.feedback.status,
-        msg: action.feedback.msg ? action.feedback.msg : 'Unknown error',
+        status: action.response.status,
+        msg: action.response.msg ? action.response.msg : 'Unknown error',
         requestedAt: action.receivedAt
       }
 

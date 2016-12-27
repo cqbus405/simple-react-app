@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+$roboto: 'Roboto', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+
+.general-info {
+  border-bottom: 1px solid black;
+  padding: 32px;
+  width: 80%;
+  margin: 0 auto;
+
+  img {
+    width: 40%;
+    height: 40%;
+  }
+
+  .container {
+    float: right;
+    width: 55%;
+    margin-left: 5%;
+
+    .title {
+      font-family: $roboto;
+      font-size: 32pt;
+    }
+
+    .id, .created, .modified {
+      font-family: $open-sans;
+      font-size: 12pt;
+    }
+
+    .title, .id, .created {
+      margin-bottom: 24px;
+    }
+  }
+}

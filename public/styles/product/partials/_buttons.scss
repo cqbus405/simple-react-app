@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$open-sans: 'Open Sans', sans-serif;
+
+.buttons {
+  text-align: right;
+  padding: 32px 0;
+  width: 80%;
+  margin: 0 auto;
+
+  button {
+    background-color: transparent;
+    border: 1px solid black;
+    margin-left: 8px;
+    width: 80px;
+    height: 40px;
+    font-family: $open-sans;
+  }
+}

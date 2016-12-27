@@ -1,57 +1,15 @@
+import 'whatwg-fetch'
 import * as types from '../constants/ActionTypes'
 import * as api from '../constants/API'
-import 'whatwg-fetch'
-
-const requestProducts = () => {
-  return {
-    type: types.REQUEST_PRODUCTS
-  }
-}
-
-const receiveProducts = feedback => {
-  return {
-    type: types.RECEIVE_PRODUCTS,
-    feedback,
-    receivedAt: Date.now()
-  }
-}
-
-const checkStatus = response => {
-  if (response.status >= 200 && response.status < 300) {
-    return response
-  }
-
-  const error = new Error(response.statusText)
-  error.response = response
-  throw error
-}
-
-const parseJSON = response => response.json()
-
-const handleError = () => {
-  return {
-    type: types.HANDLE_FETCH_PRODUCTS_ERROR,
-    errMsg: 'Fetch products error',
-    receivedAt: Date.now()
-  }
-}
-
-const shouldFetchProducts = state => {
-  const isFetching = state.productsInfo.isFetching
-  if (isFetching) {
-    return false
-  }
-
-  return true
-}
+import * as generalActions from './action-general'
 
 const fetchProducts = params => dispatch => {
-  dispatch(requestProducts())
+  dispatch(generalActions.sendRequest(types.REQUEST_PRODUCTS))
 
   const page = params.page
   const count = params.count
   const token = params.token
-  let url = `${api.ENDPOINT_PRODUCT_LIST}?page_item_count=${count}&page_number=${page}`
+  const url = `${api.ENDPOINT_PRODUCT_LIST}?page_item_count=${count}&page_number=${page}`
 
   return fetch(url, {
       method: 'GET',
@@ -59,19 +17,22 @@ const fetchProducts = params => dispatch => {
         Authorization: `bearer ${token}`
       }
     })
-    .then(response => checkStatus(response))
-    .then(response => parseJSON(response))
+    .then(response => generalActions.checkStatus(response))
+    .then(response => generalActions.parseJSON(response))
     .then(feedback => {
-      dispatch(receiveProducts(feedback))
+      dispatch(generalActions.receiveResponse(types.RECEIVE_PRODUCTS, feedback))
     })
     .catch(error => {
-      dispatch(handleError())
+      dispatch(generalActions.handleError(types.HANDLE_FETCH_PRODUCTS_ERROR, 'Fetch products error'))
       console.log(error)
     })
 }
 
 export const fetchProductsIfNeeded = params => (dispatch, getState) => {
-  if (shouldFetchProducts(getState())) {
+  const state = getState()
+  const fetching = state.products.isFetching
+
+  if (generalActions.fetching(fetching)) {
     return dispatch(fetchProducts(params))
   }
 }

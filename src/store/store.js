@@ -7,7 +7,10 @@ import {
 } from 'redux'
 import user from '../reducers/reducer-user'
 import {
-  productsInfo
+  products
+} from '../reducers/reducer-products'
+import {
+  product
 } from '../reducers/reducer-product'
 import {
   combineReducers
@@ -22,7 +25,8 @@ const middleware = applyMiddleware(
 
 const rootReducer = combineReducers({
   user,
-  productsInfo
+  products,
+  product
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
