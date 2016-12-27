@@ -4,27 +4,24 @@ $roboto: 'Roboto', sans-serif;
 $open-sans: 'Open Sans', sans-serif;
 
 .specification {
-  border-bottom: 1px solid black;
-  padding: 32px;
-  width: 80%;
-  margin: 0 auto;
 
   .title {
     font-family: $open-sans;
     font-size: 18pt;
+    color: rgba(0, 0, 0, 0.87);
   }
 
   .content {
 
     img {
-      width: 80%;
-      height: 80%;
+      width: 100%;
     }
 
     ul {
 
       li {
-
+        font-size: 9pt;
+        color: rgba(0, 0, 0, 0.54);
       }
     }
   }

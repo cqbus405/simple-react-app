@@ -6,8 +6,18 @@ import Buttons from '../components/product/Buttons'
 
 class ProductPage extends Component {
   render() {
+    // return (
+    //   <div>
+    //     <GeneralInfo />
+    //     <div className="container">
+    //       <Description />
+    //       <Specification />
+    //       <Buttons />
+    //     </div>
+    //   </div>
+    // )
     return (
-      <div>
+      <div className="container">
         <GeneralInfo />
         <Description />
         <Specification />

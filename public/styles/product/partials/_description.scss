@@ -4,21 +4,22 @@ $roboto: 'Roboto', sans-serif;
 $open-sans: 'Open Sans', sans-serif;
 
 .description {
-  width: 80%;
-  margin: 0 auto;
-  padding: 32px;
-  border-bottom: 1px solid black;
 
   .description-container {
+
     .description-title {
       font-family: $roboto;
       font-size: 18pt;
+      color: rgba(0, 0, 0, 0.87);
     }
 
     .description-content {
       font-family: $open-sans;
-      font-size: 12pt;
-      color: #5B5B5C;
+      font-size: 9pt;
+      word-spacing: 1.5px;
+      padding: 0 1%;
+      color: rgba(0, 0, 0, 0.54);
+      text-align: justify;
     }
   }
 }

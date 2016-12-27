@@ -16,6 +16,7 @@ $open-sans: 'Open Sans', sans-serif;
       padding: 16px;
       font-size: 9pt;
       font-family: $open-sans;
+      color: rgba(0, 0, 0, 0.54);
     }
 
     tr:nth-child(even) {
@@ -24,7 +25,7 @@ $open-sans: 'Open Sans', sans-serif;
 
     th {
       background-color: black;
-      color: white;
+      color: rgba(255, 255, 255, 0.87);
       font-family: $roboto;
     }
 
