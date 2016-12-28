@@ -9,12 +9,13 @@ $open-sans: 'Open Sans', sans-serif;
   .title {
     font-family: $roboto;
     font-size: 3.5em;
-    color: rgba(205, 220, 57, 0.87);
+    color: rgba(233, 62, 97, 0.87);
   }
 
   .id, .created, .modified {
     font-family: $open-sans;
-    font-size: 0.875em;
+    font-size: 0.75em;
     color: rgba(255, 255, 255, 0.54);
+    margin-left: 1.5%;
   }
 }

@@ -1,25 +1,19 @@
 @import 'partials/buttons';
-@import 'partials/description';
 @import 'partials/general-info';
-@import 'partials/specification';
+@import 'partials/product-responsive';
 
 .product-container {
-  background-image: url(../../public/images/gun2.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #464646;
+  background-color: rgba(0, 0, 0, 1);
   opacity: 1;
 
-  .inner-container {
-    background-color: rgba(255, 255, 255, 0.2);
+  .product-inner-container {
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 2%;
-  }
 
-  .inner-container:after {
-    content: "";
-    display: table;
-    clear: both;
+    .clearfix:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
   }
 }

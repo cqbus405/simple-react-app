@@ -14,5 +14,11 @@ $open-sans: 'Open Sans', sans-serif;
     height: 40px;
     font-family: $open-sans;
     color: rgba(255, 255, 255, 0.87);
+    outline: none;
+  }
+
+  button:hover {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.87);
   }
 }
