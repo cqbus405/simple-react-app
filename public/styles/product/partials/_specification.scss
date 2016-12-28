@@ -4,6 +4,7 @@ $roboto: 'Roboto', sans-serif;
 $open-sans: 'Open Sans', sans-serif;
 
 .specification {
+  border-bottom: 1px solid black;
 
   .title {
     font-family: $open-sans;
@@ -12,15 +13,20 @@ $open-sans: 'Open Sans', sans-serif;
   }
 
   .content {
-
-    img {
-      width: 100%;
+    
+    .img-container {
+      width: 90%;
+      margin: auto;
+    
+      img {
+        width: 100%;
+      }
     }
 
     ul {
 
       li {
-        font-size: 9pt;
+        font-size: .875em;
         color: rgba(0, 0, 0, 0.54);
       }
     }

@@ -7,7 +7,9 @@ class Specification extends Component {
       <div className="specification">
         <p className="title">Specification</p>
         <div className="content">
-          <img src={img_android} alt="android-n" />
+          <div className="img-container">
+            <img src={img_android} alt="android-n" />
+          </div>
           <ul>              
             <li>工作温度：0° 至 35°C（32° 至 95°F</li>
             <li>非工作温度：-20°C 至 45°C（-4°F 至 113°F</li>
