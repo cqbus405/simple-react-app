@@ -4,35 +4,17 @@ $roboto: 'Roboto', sans-serif;
 $open-sans: 'Open Sans', sans-serif;
 
 .general-info {
-  position: relative;
+  padding: 3% 3% 2%;
 
-  img {
-    width: 100%;
-    height: 380px;
-    opacity: 0.3;
+  .title {
+    font-family: $roboto;
+    font-size: 3.5em;
+    color: rgba(205, 220, 57, 0.87);
   }
 
-  .inner-container {
-    position: absolute;
-    top: 6%;
-    left: 6%;
-
-    .title {
-      font-family: $roboto;
-      font-size: 56pt;
-      color: rgba(0, 0, 0, 0.87);
-    }
-
-    .id, .created, .modified {
-      font-family: $open-sans;
-      font-size: 9pt;
-      color: rgba(0, 0, 0, 0.54);
-      margin-bottom: 2%;
-      padding: 0 12px;
-    }
-
-    .id {
-      margin-top: 5%;
-    }
+  .id, .created, .modified {
+    font-family: $open-sans;
+    font-size: 0.875em;
+    color: rgba(255, 255, 255, 0.54);
   }
 }

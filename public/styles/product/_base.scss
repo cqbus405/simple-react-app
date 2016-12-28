@@ -3,7 +3,23 @@
 @import 'partials/general-info';
 @import 'partials/specification';
 
-.container {
-  padding: 10% 25%;
-  margin: 0 auto;
+.product-container {
+  background-image: url(../../public/images/gun2.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  opacity: 1;
+
+  .inner-container {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 2%;
+  }
+
+  .inner-container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
