@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 
 class ProductItem extends Component {
   render() {
     const { product } = this.props
+    const url = `/products/${product.id}`
 
     return (
       <tr>
@@ -10,7 +12,11 @@ class ProductItem extends Component {
         <td>{product.name}</td>
         <td>{product.created}</td>
         <td>{product.modified}</td>
-        <td><button>Detail</button></td>
+        <td>
+          <button>
+            <Link className='products-link' to={url}>Detail</Link>
+          </button>
+        </td>
       </tr>
     )
   }

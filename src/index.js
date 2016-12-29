@@ -21,7 +21,7 @@ render(
     <Router history={browserHistory}>
       <Route path='/login' component={LoginPage} />
       <Route path='/products' component={ProductsPage} />
-      <Route path='/product' component={ProductPage} />
+      <Route path='/products/:productId' component={ProductPage} />
     </Router>
   </Provider>,
   document.getElementById('root')

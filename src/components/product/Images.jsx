@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import img_android from '../../../public/images/android-n.jpg'
 import Image from './Image'
 
 class Images extends Component {
@@ -7,17 +6,6 @@ class Images extends Component {
     return (
       <div className="product-responsive">
         <div className="product-responsive-image-block">
-          <Image />
-          <Image />
-          <Image />
-          <Image />
-          <Image />
-          <Image />
-          <Image />
-          <Image />
-          <Image />
-          <Image />
-          <Image />
           <Image />
           <Image />
           <Image />
