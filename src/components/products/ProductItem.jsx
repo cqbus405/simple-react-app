@@ -13,9 +13,7 @@ class ProductItem extends Component {
         <td>{product.created}</td>
         <td>{product.modified}</td>
         <td>
-          <button>
-            <Link className='products-link' to={url}>Detail</Link>
-          </button>
+          <Link className='products-link' to={url}>Detail</Link>
         </td>
       </tr>
     )

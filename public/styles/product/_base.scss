@@ -3,11 +3,17 @@
 @import 'partials/product-responsive';
 
 .product-container {
-  background-color: rgba(0, 0, 0, 0.9);
+  // background-color: rgba(0, 0, 0, 0.9);
 
   .product-inner-container {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 2%;
+
+    // background-image: url(../../public/images/gun2.jpg);
+    // background-position: center center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // opacity: 0.9;
 
     .clearfix:after {
       content: "";

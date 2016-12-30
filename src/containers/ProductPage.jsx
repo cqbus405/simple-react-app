@@ -1,12 +1,26 @@
 import React, { Component, PropTypes } from 'react'
 import ProductElement from '../components/product/ProductElement'
-import { fetchProductIfNeeded } from '../actions/action-product'
+import { fetchProductIfNeeded, deleteProductIfNeeded } from '../actions/action-product'
 import { getUserInfo } from '../utils/util-auth'
 import { getProductInfo, setProductInfo } from '../utils/util-product'
 import { connect } from 'react-redux'
 
 class ProductPage extends Component {
+  render() {
+    console.log('render')
+
+    const { product, deleteProduct } = this.props
+
+    return (
+      <div>
+        {product ? <ProductElement product={product} deleteProduct={deleteProduct} /> : null}
+      </div>
+    )
+  }
+
   componentDidMount() {
+    console.log('componentDidMount')
+
     const { fetchProduct, params } = this.props
     let id = params.productId
     if (id) {
@@ -19,20 +33,12 @@ class ProductPage extends Component {
     const token = getUserInfo().token
     fetchProduct(id, token)
   }
-
-  render() {
-    const { product } = this.props
-
-    return (
-      <div>
-        {product ? <ProductElement product={product} /> : null}
-      </div>
-    )
-  }
 }
 
 ProductPage.propTypes = {
-  product: PropTypes.object
+  product: PropTypes.object,
+  deleteProduct: PropTypes.func,
+  fetchProduct: PropTypes.func
 }
 
 const mapStateToProps = state => {
@@ -46,6 +52,12 @@ const mapDispatchToProps = dispatch => {
     fetchProduct: (id, token) => {
       dispatch(fetchProductIfNeeded({
         id,
+        token
+      }))
+    },
+    deleteProduct: (id, token) => {
+      dispatch(deleteProductIfNeeded({
+        id, 
         token
       }))
     }

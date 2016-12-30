@@ -7,7 +7,7 @@ import Images from './Images'
 
 class ProductElement extends Component {
   render() {
-    const { product } = this.props
+    const { product, deleteProduct } = this.props
 
     const generalInfoObj = {
       id: product.id,
@@ -31,14 +31,15 @@ class ProductElement extends Component {
           <Specification specification={specification} />
           <div className="clearfix"></div>
         </div>
-        <Buttons /> 
+        <Buttons deleteProduct={deleteProduct} /> 
       </div>
     )
   }
 }
 
 ProductElement.propTypes = {
-  product: PropTypes.object
+  product: PropTypes.object,
+  deleteProduct: PropTypes.func
 }
 
 export default ProductElement

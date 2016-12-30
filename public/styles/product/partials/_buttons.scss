@@ -5,20 +5,25 @@ $open-sans: 'Open Sans', sans-serif;
 .buttons {
   padding: 6%;
   text-align: right;
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.26);
 
   button {
     background-color: transparent;
-    border: 1px solid white;
+    // border: 1px solid white;
+    border: 1px solid black;
     margin-left: 8px;
     width: 80px;
     height: 40px;
     font-family: $open-sans;
-    color: rgba(255, 255, 255, 0.87);
+    // color: rgba(255, 255, 255, 0.87);
+    color: rgba(0, 0, 0, 0.87);
     outline: none;
   }
 
   button:hover {
-    background-color: white;
-    color: rgba(0, 0, 0, 0.87);
+    // background-color: white;
+    // color: rgba(0, 0, 0, 0.87);
+    background-color: black;
+    color: rgba(255, 255, 255, 0.87);
   }
 }

@@ -4,3 +4,8 @@
 @import 'common/base';
 @import 'products/base';
 @import 'product/base';
+
+html, body {
+  margin: 0;
+  padding: 0;
+}

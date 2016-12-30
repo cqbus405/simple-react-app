@@ -15,7 +15,8 @@ $open-sans: 'Open Sans', sans-serif;
   .id, .created, .modified {
     font-family: $open-sans;
     font-size: 0.75em;
-    color: rgba(255, 255, 255, 0.54);
+    // color: rgba(255, 255, 255, 0.54);
+    color: rgba(0, 0, 0, 0.54);    
     margin-left: 1%;
   }
 }

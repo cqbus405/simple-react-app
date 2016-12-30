@@ -1,4 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+$open-sans: 'Open Sans', sans-serif;
+
 .products-link {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.87);
+  border: 1px solid black;
+  padding: 3%;
+  float: right;
+  transition-duration: 0.3s;
+  font-family: $open-sans;
+  font-size: 0.75em;
+}
+
+.products-link:hover {
+  background-color: black;
+  color: rgba(255, 255, 255, 0.87);
 }
