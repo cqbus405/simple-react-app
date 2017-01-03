@@ -14,6 +14,7 @@ import {
 import LoginPage from './containers/LoginPage'
 import ProductsPage from './containers/ProductsPage'
 import ProductPage from './containers/ProductPage'
+import CreateProductPage from './containers/CreateProductPage'
 import '../build/styles/main.css'
 
 render(
@@ -21,6 +22,7 @@ render(
     <Router history={browserHistory}>
       <Route path='/login' component={LoginPage} />
       <Route path='/products' component={ProductsPage} />
+      <Route path='/products/create' component={CreateProductPage} />
       <Route path='/products/:productId' component={ProductPage} />
     </Router>
   </Provider>,

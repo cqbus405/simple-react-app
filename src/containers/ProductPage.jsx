@@ -7,8 +7,6 @@ import { connect } from 'react-redux'
 
 class ProductPage extends Component {
   render() {
-    console.log('render')
-
     const { product, deleteProduct } = this.props
 
     return (
@@ -19,8 +17,6 @@ class ProductPage extends Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount')
-
     const { fetchProduct, params } = this.props
     let id = params.productId
     if (id) {

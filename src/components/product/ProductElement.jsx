@@ -15,12 +15,19 @@ class ProductElement extends Component {
       created: product.created,
       modified: product.modified
     }
+
     const descriptionObj = {
       description: product.description,
       videoUrl: product.videoUrl
     }
 
     const specification = product.specification
+
+    const btnNames = {
+      type: 0,
+      btn1: 'Edit',
+      btn2: 'Delete'
+    }
 
     return (
       <div className="product-container">
@@ -31,7 +38,7 @@ class ProductElement extends Component {
           <Specification specification={specification} />
           <div className="clearfix"></div>
         </div>
-        <Buttons deleteProduct={deleteProduct} /> 
+        <Buttons deleteProduct={deleteProduct} btnNames={btnNames} /> 
       </div>
     )
   }

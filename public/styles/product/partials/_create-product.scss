@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+$roboto: 'Roboto', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+$title-size: 1.5em;
+$content-size: 0.875em;
+$title-color: rgba(0 ,0 ,0, 0.87);
+$content-color: rgba(0, 0, 0, 0.54);
+
+.create-product-style {
+  padding: 0 15%;
+  margin: 0 auto;
+}
+
+.form-general-info {
+  h3 {
+    font-family: $open-sans;
+    font-size: $title-size;
+    color: $title-color;
+  }
+
+  form {
+    padding: 1.5% 2%;
+
+    input, textarea {
+      width: 100%;
+      padding: 1%;
+      margin-bottom: 16px;
+      font-family: $open-sans;
+      font-size: $content-size;
+      color: $content-color;
+      border: 1px solid black;
+    }
+
+    textarea {
+      height: 300px;
+      line-height: 2;
+      resize: none;
+    }
+  }
+}
+
+.form-pics-and-video {
+  h3 {
+    font-family: $open-sans;
+    font-size: $title-size;
+    color: $title-color;
+  }
+
+  form {
+    padding: 1.5% 2% 0;
+
+    input {
+      width: 100%;
+      padding: 1%;
+      font-family: $open-sans;
+      font-size: $content-size;
+      color: $content-color;
+      border: 1px solid black;
+    }
+  }
+}
