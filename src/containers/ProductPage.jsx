@@ -7,8 +7,6 @@ import { connect } from 'react-redux'
 
 class ProductPage extends Component {
   render() {
-    console.log('render')
-
     const { product, deleteProduct } = this.props
 
     return (

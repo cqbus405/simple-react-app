@@ -78,3 +78,41 @@ export const deleteProductIfNeeded = params => (dispatch, getState) => {
     return dispatch(deleteProduct(params))
   }
 }
+
+const addProduct = params => dispatch => {
+  dispatch(generalActions.sendRequest(types.REQUEST_ADD_PRODUCT))
+
+  const url = `${api.ENDPOINT_PRODUCT_ADD}`
+  const token = params.token
+
+  return fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${token}`
+      },
+      body: JSON.stringify({
+        product: params.product
+      })
+    })
+    .then(response => generalActions.checkStatus(response))
+    .then(response => generalActions.parseJSON(response))
+    .then(feedback => {
+      dispatch(generalActions.receiveResponse(types.RECEIVE_ADD_PRODUCT_FEEDBACK, feedback))
+      if (feedback.status === 200) {
+        browserHistory.push('/products')
+      }
+    })
+    .catch(error => {
+      dispatch(generalActions.handleError(types.HANDLE_ADD_PRODUCT_ERROR, 'Add product error'))
+    })
+}
+
+export const addProductIfNeeded = params => (dispatch, getState) => {
+  const state = getState()
+  const fetching = state.product.isFetching
+
+  if (generalActions.fetching(fetching)) {
+    return dispatch(addProduct(params))
+  }
+}
