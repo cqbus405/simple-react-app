@@ -30,6 +30,7 @@ $content-color: rgba(0, 0, 0, 0.54);
       font-size: $content-size;
       color: $content-color;
       border: 1px solid black;
+      outline: none;
     }
 
     textarea {
@@ -57,6 +58,7 @@ $content-color: rgba(0, 0, 0, 0.54);
       font-size: $content-size;
       color: $content-color;
       border: 1px solid black;
+      outline: none;
     }
   }
 }

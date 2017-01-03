@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { getProductInfo } from '../../utils/util-product'
+import { getProductInfo, getState } from '../../utils/util-product'
 import { getUserInfo } from '../../utils/util-auth'
 
 class Buttons extends Component {
@@ -7,7 +7,7 @@ class Buttons extends Component {
     const { deleteProduct, createProduct, btnNames } = this.props
     const isDetailPage = btnNames.type === 0;
     const token = getUserInfo().token
-    const product = null;
+    const product = getState('cp');
 
     let id
     if (isDetailPage) {
@@ -16,8 +16,8 @@ class Buttons extends Component {
 
     return (  
       <div className="buttons">
-        <button onClick={isDetailPage ? null : null}>{btnNames.btn1}</button>
-        <button onClick={isDetailPage ? () => deleteProduct(id, token) : () => createProduct(token, product)}>{btnNames.btn2}</button>
+        <button onClick={isDetailPage ? null : () => createProduct(token, product)}>{btnNames.btn1}</button>
+        <button onClick={isDetailPage ? () => deleteProduct(id, token) : null}>{btnNames.btn2}</button>
       </div>
     )
   }
