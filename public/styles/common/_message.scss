@@ -8,6 +8,7 @@ $open-sans: 'Open Sans', sans-serif;
   p {
     padding: 256px;
     font-family: $open-sans;
-    font-size: 14pt;
+    font-size: 0.875em;
+    color: rgba(0, 0, 0, 0.87);
   }
 }

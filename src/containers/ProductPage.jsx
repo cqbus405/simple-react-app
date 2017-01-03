@@ -19,8 +19,6 @@ class ProductPage extends Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount')
-
     const { fetchProduct, params } = this.props
     let id = params.productId
     if (id) {

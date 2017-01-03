@@ -1,4 +1,5 @@
-const BASE_URL = 'http://66.1.33.50:3001'
+// const BASE_URL = 'http://66.1.33.50:3001'
+const BASE_URL = 'http://127.0.0.1:3001'
 
 export const ENDPOINT_USER_LOGIN = `${BASE_URL}/user/login`
 

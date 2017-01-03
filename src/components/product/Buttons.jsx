@@ -9,10 +9,10 @@ class Buttons extends Component {
     const token = getUserInfo().token
 
     return (  
-      <form className="buttons">
+      <div className="buttons">
         <button>Edit</button>
         <button onClick={() => deleteProduct(id, token)}>Delete</button>
-      </form>
+      </div>
     )
   }
 }

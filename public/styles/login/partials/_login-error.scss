@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-$roboto: 'Roboto', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
 
 .login-error__msg {
-  color: red;
-  font-size: 8pt;
-  font-family: $roboto
+  color: rgba(255, 0, 0, 0.87);
+  font-size: 0.75em;
+  font-family: $open-sans
 }
