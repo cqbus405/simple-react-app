@@ -1,14 +1,18 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import GeneralInfoForm from '../components/product/GeneralInfoForm'
-import PicsAndVideosForm from '../components/product/PicsAndVideoForm'
-import Buttons from '../components/product/Buttons'
+import { browserHistory } from 'react-router'
+import CreateProductForm from '../components/product/CreateProductForm'
 import { addProductIfNeeded } from '../actions/action-product'
 
-
 class CreateProductPage extends Component {
+  constructor(props) {
+    super(props)
+
+    this.goBack = this.goBack.bind(this)
+  }
+
   render() {
-    const { createProduct } = this.props
+    const { createProduct, errMsg, status } = this.props
 
     const btnNames = {
       type: 1,
@@ -18,18 +22,26 @@ class CreateProductPage extends Component {
 
     return (
       <div>
-        <div className="create-product-style">
-          <GeneralInfoForm />
-          <PicsAndVideosForm />
-        </div>
-        <Buttons btnNames={btnNames} createProduct={createProduct} />
+        <CreateProductForm status={status} errMsg={errMsg} btnNames={btnNames} createProduct={createProduct} goBack={this.goBack} />
       </div>
     )
+  }
+
+  goBack() {
+    browserHistory.goBack()
   }
 }
 
 CreateProductPage.propTypes = {
-  createProduct: PropTypes.func
+  createProduct: PropTypes.func,
+  errMsg: PropTypes.string
+}
+
+const mapStateToProps = state => {
+  return {
+    errMsg: state.product.msg,
+    status: state.product.status
+  }
 }
 
 const mapDispatchToProps = dispatch => {
@@ -44,6 +56,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(CreateProductPage)

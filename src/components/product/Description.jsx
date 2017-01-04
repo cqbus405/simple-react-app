@@ -18,7 +18,7 @@ class Description extends Component {
           </div>
           <div>
             <p className="product-responsive-title">Video Url</p>
-            <p className="product-responsive-content">{videoUrl}</p>
+            <p><a className="product-responsive-link" href={videoUrl}>{videoUrl}</a></p>
           </div>
         </div>
       </div>

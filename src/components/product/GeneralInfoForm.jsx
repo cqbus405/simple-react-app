@@ -1,9 +1,14 @@
 import React, { Component, PropTypes } from 'react'
-import { setState, getState } from '../../utils/util-product'
 
 class GeneralInfoForm extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      name: '',
+      description: '',
+      specification: ''
+    }
 
     this.handleTitleChange = this.handleTitleChange.bind(this)
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
@@ -26,39 +31,21 @@ class GeneralInfoForm extends Component {
   }
 
   handleTitleChange(event) {
-    const name = event.target.value
-    const state = getState('cp')
-    if (state) {
-      state[name] = name
-    } else {
-      setState('cp', {
-        name
-      })
-    }
+    this.setState({
+      name: event.target.value
+    })
   }
 
   handleDescriptionChange(event) {
-    const description = event.target.value
-    const state = getState('cp')
-    if (state) {
-      state[description] = description
-    } else {
-      setState('cp', {
-        description
-      })
-    }
+    this.setState({
+      description: event.target.value
+    })
   }
 
   handleSpecificationChange(event) {
-    const specification = event.target.value
-    const state = getState('cp')
-    if (state) {
-      state[specification] = specification
-    } else {
-      setState('cp', {
-        specification
-      })
-    }
+    this.setState({
+      specification: event.target.value
+    })
   }
 }
 

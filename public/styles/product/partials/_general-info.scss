@@ -4,11 +4,11 @@ $roboto: 'Roboto', sans-serif;
 $open-sans: 'Open Sans', sans-serif;
 
 .general-info {
-  padding: 3% 3% 2%;
+  padding: 3%;
 
   .title {
     font-family: $roboto;
-    font-size: 1.75em;
+    font-size: 2.75em;
     color: rgba(233, 62, 97, 0.87);
   }
 
@@ -16,7 +16,8 @@ $open-sans: 'Open Sans', sans-serif;
     font-family: $open-sans;
     font-size: 0.75em;
     // color: rgba(255, 255, 255, 0.54);
-    color: rgba(0, 0, 0, 0.54);    
-    margin-left: 1%;
+    color: rgba(0, 0, 0, 0.54);
+    padding-left: 0.5%;
+    padding-top: 0.5%;    
   }
 }

@@ -11,7 +11,7 @@ export const getPage = () => {
   if (!currentPage) {
     currentPage = 1
   }
-  return currentPage
+  return parseInt(currentPage, 10)
 }
 
 export const getCurrentPage = (action, pages, page) => {
@@ -19,7 +19,7 @@ export const getCurrentPage = (action, pages, page) => {
 
   switch (action) {
     case pageConst.PREV:
-      if (currentPage == 1) {
+      if (currentPage === 1) {
         currentPage = 0
       } else if (currentPage > 1) {
         --currentPage
@@ -28,7 +28,7 @@ export const getCurrentPage = (action, pages, page) => {
       break
 
     case pageConst.NEXT:
-      if (currentPage == pages) {
+      if (currentPage === pages) {
         currentPage = 0
       } else if (currentPage < pages) {
         ++currentPage
@@ -37,7 +37,7 @@ export const getCurrentPage = (action, pages, page) => {
       break
 
     case pageConst.PAGE:
-      if (currentPage == page) {
+      if (currentPage === page) {
         currentPage = 0
       } else {
         currentPage = page

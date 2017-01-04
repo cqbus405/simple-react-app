@@ -3,7 +3,13 @@
 $open-sans: 'Open Sans', sans-serif;
 
 .login-error__msg {
-  color: rgba(255, 0, 0, 0.87);
-  font-size: 0.75em;
-  font-family: $open-sans
+  padding: 1% 2% 0;
+  margin: 0 auto;
+  text-align: center;
+
+  p {
+    color: rgba(255, 0, 0, 0.87);
+    font-size: 0.875em;
+    font-family: $open-sans;
+  }
 }

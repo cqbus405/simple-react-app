@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import img_android from '../../../public/images/gun2.jpg'
 
 class Image extends Component {

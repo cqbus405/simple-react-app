@@ -3,8 +3,8 @@ import React, { PropTypes, Component } from 'react'
 export default class ErrorMessage extends Component {
   render() {
     return (
-      <div>
-        <p className="login-error__msg">{this.props.errorMsg}</p>
+      <div className="login-error__msg">
+        <p>{this.props.errorMsg}</p>
       </div>
     )
   }

@@ -57,13 +57,14 @@ const mapDispatchToProps = dispatch => {
   return {
     handlePageBtnClick: (action, pages, page) => {
       let currentPage = getCurrentPage(action, pages, page)
+      let currentPageInt = parseInt(currentPage, 10)
 
-      if (currentPage != 0) {
+      if (currentPageInt !== 0) {
         const userInfo = getUserInfo()
         const token = userInfo.token
 
         dispatch(fetchProductsIfNeeded({
-          page: currentPage,
+          page: currentPageInt,
           count: PAGE_ITEM_COUNT,
           token: token
         }))

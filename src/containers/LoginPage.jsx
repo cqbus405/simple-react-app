@@ -3,7 +3,7 @@ import Indicator from '../components/common/Indicator'
 import LoginForm from '../components/login/LoginForm'
 import ErrorMessage from '../components/common/ErrorMessage'
 import { connect } from 'react-redux'
-import img_gun from '../../public/images/gun.jpg'
+import jinx from '../../public/images/jinx.jpeg'
 import { doLoginIfNeeded } from '../actions/action-user'
 
 class LoginPage extends Component {
@@ -16,7 +16,7 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="login-page__wrapper">
-        <img src={img_gun} alt="gun" />
+        <img src={jinx} alt="jinx" />
         {this.props.loginFeedback.status === 500 ? <ErrorMessage errorMsg={this.props.loginFeedback.msg} /> : null}
         <LoginForm onSubmit={this._login} />
         {this.props.loginFeedback.isFetching ? <Indicator /> : null}
