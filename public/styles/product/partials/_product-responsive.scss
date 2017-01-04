@@ -15,7 +15,7 @@ $open-sans: 'Open Sans', sans-serif;
   .product-responsive-block {
     // background-color: rgba(180, 141, 1, 0.2);
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(0, 0, 0, 0.26);
+    // border: 1px solid rgba(0, 0, 0, 0.26);
   }
 
   .product-responsive-image-block {
@@ -54,9 +54,10 @@ $open-sans: 'Open Sans', sans-serif;
 }
 
 .product-responsive-link {
-  margin: 0 5% 3%;
+  display: inline-block;
+  padding: 0 5% 3%;
   font-family: $open-sans;
-  font-size: 0.875em;
+  font-size: 0.75em;
   color: rgba(233, 62, 97, 0.87);
   text-decoration: none;
 }
