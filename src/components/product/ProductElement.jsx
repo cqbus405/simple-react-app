@@ -7,7 +7,7 @@ import Images from './Images'
 
 class ProductElement extends Component {
   render() {
-    const { product, deleteProduct } = this.props
+    const { product, deleteProduct, btnNames, redirectTo } = this.props
 
     const generalInfoObj = {
       id: product.id,
@@ -23,12 +23,6 @@ class ProductElement extends Component {
 
     const specification = product.specification
 
-    const btnNames = {
-      type: 0,
-      btn1: 'Edit',
-      btn2: 'Delete'
-    }
-
     return (
       <div className="product-container">
         <GeneralInfo generalInfo={generalInfoObj} />
@@ -38,7 +32,7 @@ class ProductElement extends Component {
           <Specification specification={specification} />
           <div className="clearfix"></div>
         </div>
-        <Buttons deleteProduct={deleteProduct} btnNames={btnNames} /> 
+        <Buttons deleteProduct={deleteProduct} btnNames={btnNames} redirectTo={redirectTo} /> 
       </div>
     )
   }
@@ -46,7 +40,9 @@ class ProductElement extends Component {
 
 ProductElement.propTypes = {
   product: PropTypes.object,
-  deleteProduct: PropTypes.func
+  deleteProduct: PropTypes.func,
+  btnNames: PropTypes.object,
+  redirectTo: PropTypes.func
 }
 
 export default ProductElement

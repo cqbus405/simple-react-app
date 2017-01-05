@@ -6,7 +6,7 @@ class Header extends Component {
   render() {
     const { handleLogoutBtnClick } = this.props
     const name = getUserInfo().name
-    const url = '/products/create'
+    const url = '/product/create'
 
     return (
       <div className="header-style">

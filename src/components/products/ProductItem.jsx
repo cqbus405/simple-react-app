@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 class ProductItem extends Component {
   render() {
     const { product } = this.props
-    const url = `/products/${product.id}`
+    const url = `/products/product/${product.id}`
 
     return (
       <tr>

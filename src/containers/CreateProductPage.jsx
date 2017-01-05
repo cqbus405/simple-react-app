@@ -1,34 +1,20 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { browserHistory } from 'react-router'
 import CreateProductForm from '../components/product/CreateProductForm'
 import { addProductIfNeeded } from '../actions/action-product'
+import { goBack } from '../utils/util-general'
+import { btnTypes } from '../constants/constants'
 
 class CreateProductPage extends Component {
-  constructor(props) {
-    super(props)
-
-    this.goBack = this.goBack.bind(this)
-  }
-
   render() {
     const { createProduct, errMsg, status } = this.props
-
-    const btnNames = {
-      type: 1,
-      btn1: 'Create',
-      btn2: 'Cancel'
-    }
+    const btnType = btnTypes.createProductPage
 
     return (
       <div>
-        <CreateProductForm status={status} errMsg={errMsg} btnNames={btnNames} createProduct={createProduct} goBack={this.goBack} />
+        <CreateProductForm status={status} errMsg={errMsg} btnNames={btnType} createProduct={createProduct} goBack={goBack} />
       </div>
     )
-  }
-
-  goBack() {
-    browserHistory.goBack()
   }
 }
 

@@ -2,13 +2,13 @@ import * as types from '../constants/ActionTypes'
 import * as api from '../constants/API'
 import 'whatwg-fetch'
 import {
-  browserHistory
-} from 'react-router'
-import {
   setUserInfo,
   getUserInfo
 } from '../utils/util-auth'
 import * as generalActions from './action-general'
+import {
+  redirectTo
+} from '../utils/util-general'
 
 const login = loginInfo => dispatch => {
   dispatch(generalActions.sendRequest(types.REQUEST_LOGIN))
@@ -35,7 +35,7 @@ const login = loginInfo => dispatch => {
           name: name
         }
         setUserInfo(userInfo)
-        browserHistory.push('/products') //登录成功后页面转跳
+        redirectTo('/products')
       }
     })
     .catch(error => {
@@ -70,7 +70,7 @@ const logout = () => dispatch => {
       dispatch(generalActions.receiveResponse(types.RECEIVE_LOGOUT_FEEDBACK, feedback))
       if (feedback.status === 200) {
         setUserInfo(null)
-        browserHistory.push('/login')
+        redirectTo('/login')
       }
     })
     .catch(error => {

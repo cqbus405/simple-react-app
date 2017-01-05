@@ -82,6 +82,30 @@ export const product = (state = {
         receivedAt: action.receivedAt
       }
 
+    case types.REQUEST_EDIT_PRODUCT:
+      return {
+        ...state,
+        isFetching: true
+      }
+
+    case types.RECEIVE_EDIT_PRODUCT_FEEDBACK:
+      return {
+        ...state,
+        isFetching: false,
+        status: action.response.status,
+        msg: action.response.msg ? action.response.msg : 'Unknown error',
+        receivedAt: action.receivedAt
+      }
+
+    case types.HANDLE_EDIT_PRODUCT_ERROR:
+      return {
+        ...state,
+        isFetching: false,
+        status: 500,
+        msg: action.errMsg,
+        receivedAt: action.receivedAt
+      }
+
     default:
       return state
   }
