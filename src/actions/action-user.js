@@ -70,7 +70,7 @@ const logout = () => dispatch => {
       dispatch(generalActions.receiveResponse(types.RECEIVE_LOGOUT_FEEDBACK, feedback))
       if (feedback.status === 200) {
         setUserInfo(null)
-        redirectTo('/login')
+        redirectTo('/')
       }
     })
     .catch(error => {

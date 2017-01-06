@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import PageItem from './PageItem'
 import { pageConst } from '../../constants/constants'
+import ic_left_arrow from '../../../public/images/ic_left_arrow_16.svg'
+import ic_right_arrow from '../../../public/images/ic_right_arrow_16.svg'
 
 class Pages extends Component {
   render() {
@@ -9,9 +11,9 @@ class Pages extends Component {
     return (
       <div className="pagination">
         <ul>
-          <li><button onClick={() => handlePageBtnClick(pageConst.PREV, pages, null)}>«</button></li>
+          <li><button onClick={() => handlePageBtnClick(pageConst.PREV, pages, null)}><img src={ic_left_arrow} alt="left arrow" /></button></li>
           {arr ? arr.map((i, key) => <PageItem i={i} key={key} handlePageBtnClick={handlePageBtnClick} />) : null}
-          <li><button onClick={() => handlePageBtnClick(pageConst.NEXT, pages, null)}>»</button></li>
+          <li><button onClick={() => handlePageBtnClick(pageConst.NEXT, pages, null)}><img src={ic_right_arrow} alt="right arrow" /></button></li>
         </ul>
       </div>
     )

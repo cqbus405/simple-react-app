@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$open-sans: 'Open Sans', sans-serif;
+
+.home-img {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  img {
+
+  }
+
+  .home-link-wrapper {
+    margin: 16px;
+
+    .home-link {
+      text-decoration: none;
+      font-family: $open-sans;
+      font-size: 0.875em;
+      color: rgba(0, 0, 0, 0.87);
+      // background-color: rgba(0, 0, 0, 0.87);
+      border: 1px solid rgba(0, 0, 0, 1);
+      border-radius: 24px;
+      padding: 12px 48px;
+      transition-duration: 0.4s;
+    }
+
+    .home-link:hover {
+      background-color: rgba(0, 0, 0, 1);
+      color: rgba(255, 255, 255, 0.87);
+    }
+  }
+}

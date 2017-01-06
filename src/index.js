@@ -22,6 +22,10 @@ import NotFoundPage from './containers/NotFoundPage'
 import App from './containers/App'
 import Home from './containers/Home'
 
+import {
+  checkAuth
+} from './utils/util-auth'
+
 import '../build/styles/main.css'
 
 render(
@@ -29,7 +33,7 @@ render(
     <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={Home} />
-        <Route path='login' component={LoginPage} />
+        <Route path='login' component={LoginPage} onEnter={checkAuth} />
         <Route path='products' component={ProductsPage} />
         <Route path='products/product/:id' component={ProductPage} />
         <Route path='product/create' component={CreateProductPage} />
