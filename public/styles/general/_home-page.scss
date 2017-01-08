@@ -3,34 +3,39 @@
 $open-sans: 'Open Sans', sans-serif;
 
 .home-img {
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%);
-  text-align: center;
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
 
   img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+  }
+}
 
+.home-link-wrapper {
+  position: absolute;
+  bottom: 5%;
+  right: 50%;
+
+  .home-link {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    display: inline-block;
+    transition-duration: 0.4s;
   }
 
-  .home-link-wrapper {
-    margin: 16px;
-
-    .home-link {
-      text-decoration: none;
-      font-family: $open-sans;
-      font-size: 0.875em;
-      color: rgba(0, 0, 0, 0.87);
-      // background-color: rgba(0, 0, 0, 0.87);
-      border: 1px solid rgba(0, 0, 0, 1);
-      border-radius: 24px;
-      padding: 12px 48px;
-      transition-duration: 0.4s;
-    }
-
-    .home-link:hover {
-      background-color: rgba(0, 0, 0, 1);
-      color: rgba(255, 255, 255, 0.87);
-    }
+  .home-link:hover {
+    background-color: rgba(255, 255, 255, 0.35);
   }
 }

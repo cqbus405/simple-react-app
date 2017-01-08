@@ -5,16 +5,14 @@ import { fetchProductIfNeeded, deleteProductIfNeeded } from '../actions/action-p
 import { getUserInfo } from '../utils/util-auth'
 import { getProductInfo, setProductInfo } from '../utils/util-product'
 import { redirectTo } from '../utils/util-general'
-import { btnTypes } from '../constants/constants'
 
 class ProductPage extends Component {
   render() {
     const { product, deleteProduct } = this.props
-    const btnType = btnTypes.productPage
 
     return (
       <div>
-        {product ? <ProductElement btnNames={btnType} product={product} deleteProduct={deleteProduct} redirectTo={redirectTo} /> : null}
+        {product ? <ProductElement product={product} deleteProduct={deleteProduct} redirectTo={redirectTo} /> : null}
       </div>
     )
   }

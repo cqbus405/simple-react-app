@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { getUserInfo } from '../utils/util-auth'
-import img_fish from '../../public/images/bg.png'
+import ic_1 from '../../public/images/5.gif'
+import ic_enter from '../../public/images/ic_enter.svg'
 
 class Home extends Component {
   render() {
@@ -16,10 +17,12 @@ class Home extends Component {
     }
 
     return (
-      <div className="home-img">
-        <img src={img_fish} alt="fish" />
+      <div>
+        <div className="home-img">
+          <img src={ic_1} alt="ic_1" />
+        </div>
         <div className="home-link-wrapper">
-          <Link className="home-link" to={path}>ENTER</Link>
+          <Link className="home-link" to={path}><img src={ic_enter} alt="ic_enter" /></Link>
         </div>
       </div>
     )

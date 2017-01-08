@@ -14,8 +14,8 @@ $open-sans: 'Open Sans', sans-serif;
     th, td {
       text-align: left;
       padding: 16px;
-      font-size: 9pt;
-      font-family: $open-sans;
+      font-size: 0.875em;
+      font-family: $roboto;
       color: rgba(0, 0, 0, 0.54);
     }
 
@@ -26,7 +26,7 @@ $open-sans: 'Open Sans', sans-serif;
     th {
       background-color: black;
       color: rgba(255, 255, 255, 0.87);
-      font-family: $roboto;
+      font-family: $open-sans;
     }
   }
 }

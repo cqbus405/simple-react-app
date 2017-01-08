@@ -4,50 +4,45 @@ $open-sans: 'Open Sans', sans-serif;
 
 .header-style {
   width: 85%;
-  margin: 0 auto;
+  margin: auto;
   padding: 24px 0;
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-
-  li {
-    float: left;
+  h2 {
+    display: inline-block;
     font-family: $open-sans;
-    display: inline;
+    font-size: 1.125em;
     color: rgba(0, 0, 0, 0.87);
-
-    button {
-      background-color: transparent;
-      border: 1px solid black;
-      margin-left: 6px; 
-      font-family: $open-sans;
-      font-size: 0.75em;
-      color: rgba(0, 0, 0, 0.87);
-      transition: background-color 0.4s;
-      outline: none;
-      padding: 3px;
-    }
-
-    button:hover {
-      background-color: black;
-      color: white;
-    }
-
-    .header-create-btn {
-      @extend button;
-      text-decoration: none;
-    }
-
-    .header-create-btn:hover {
-      @extend button:hover;
-    }
   }
 
-  .button-container {
+  div {
+    display: inline-block;
     float: right;
+    height: 54px;
+
+    .header-inner-container {
+      margin-top: 11px;
+
+      .header-create-btn {
+        display: inline-block;
+        height: 32px;
+        width: 32px;
+      }
+
+      .header-create-btn:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      input {
+        height: 32px;
+        width: 32px;
+        cursor: pointer;
+        margin-left: 8px;
+        outline: none;
+      }
+
+      input:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
   }
 }

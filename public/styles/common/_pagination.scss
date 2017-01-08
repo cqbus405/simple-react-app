@@ -11,27 +11,28 @@ $open-sans: 'Open Sans', sans-serif;
     display: inline-block;
     padding: 0;
     margin: 0;
-    font-size: 8pt;
-    font-family: $open-sans;
-    color: rgba(0, 0, 0, 0.87);
 
     li {
       display: inline;
 
       button {
-        color: black;
+        width: 32px;
+        height: 32px;
+        margin: 1px;
+        font-size: 0.875em;
+        font-family: $open-sans;
+        color: rgba(0, 0, 0, 0.54);
         float: left;
-        padding: 6px 12px;
         text-decoration: none;
-        transition: background-color .4s;
         border: none;
         background-color: transparent;
         outline: none;
+        transition: background-color .4s;
       }
 
       button.active {
         background-color: #FF99CC;
-        color: white;
+        color: rgba(255, 255, 255, 0.87);
       }
 
       button:hover:not(.active) {

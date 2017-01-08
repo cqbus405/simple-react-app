@@ -3,17 +3,13 @@
 $open-sans: 'Open Sans', sans-serif;
 
 .products-link {
+  width: 24px;
+  height: 24px;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.87);
-  border: 1px solid black;
-  padding: 2%;
   float: right;
-  transition-duration: 0.3s;
-  font-family: $open-sans;
-  font-size: 0.75em;
+  transition-duration: 0.4s;
 }
 
 .products-link:hover {
-  background-color: black;
-  color: rgba(255, 255, 255, 0.87);
+  background-color: rgba(0, 0, 0, 0.1);
 }

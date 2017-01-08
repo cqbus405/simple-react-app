@@ -7,11 +7,20 @@ $content-size: 0.875em;
 $title-color: rgba(0 ,0 ,0, 0.87);
 $content-color: rgba(0, 0, 0, 0.54);
 
+.create-product-title {
+  font-family: $roboto;
+  font-size: 1.75em;
+  color: rgba(233, 62, 97, 0.87);  
+  padding: 1% 3%;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
 .create-product-form {
-  margin: 0 auto;
 
   form {
-    padding: 6% 6% 0;
+    margin: 3% auto 0;
+    width: 50%; 
 
     h3 {
       font-family: $open-sans;

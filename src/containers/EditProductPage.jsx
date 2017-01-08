@@ -15,6 +15,7 @@ class EditProductPage extends Component {
 
     return (
       <div>
+        <h1 className="create-product-title">Edit Product</h1>
         <CreateProductForm status={status} errMsg={errMsg} btnNames={btnType} goBack={goBack} editProduct={editProduct} product={product} />
       </div>
     )

@@ -16,9 +16,8 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="login-page__wrapper">
-        <img src={jinx} alt="jinx" />
-        {this.props.loginFeedback.status === 500 ? <ErrorMessage errorMsg={this.props.loginFeedback.msg} /> : null}
         <LoginForm onSubmit={this._login} />
+        {this.props.loginFeedback.status === 500 ? <ErrorMessage errorMsg={this.props.loginFeedback.msg} /> : null}
         {this.props.loginFeedback.isFetching ? <Indicator /> : null}
       </div>
     )

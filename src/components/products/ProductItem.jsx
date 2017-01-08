@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
+import ic_edit from '../../../public/images/ic_edit.svg'
 
 class ProductItem extends Component {
   render() {
@@ -13,7 +14,7 @@ class ProductItem extends Component {
         <td>{product.created}</td>
         <td>{product.modified}</td>
         <td>
-          <Link className='products-link' to={url}>Detail</Link>
+          <Link className='products-link' to={url}><img src={ic_edit} alt="ic_edit" /></Link>
         </td>
       </tr>
     )

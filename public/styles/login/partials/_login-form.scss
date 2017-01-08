@@ -14,13 +14,13 @@ $border-color: #FF99CC;
   color: $font-color-input;
   font-size: 0.75em;
   background-color: transparent;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.26);
   outline: none;
 }
 
-.login-form__input:hover {
-  outline: 2px solid $border-color;
-}
+// .login-form__input:hover {
+//   outline: 2px solid $border-color;
+// }
 
 .login-form__submit {
   width: 288px;
@@ -34,5 +34,5 @@ $border-color: #FF99CC;
 }
 
 .login-form__submit:hover {
-  background-color: gray;
+  background-color: rgba(0, 0, 0, 0.54);
 }

@@ -4,19 +4,24 @@
 @import 'partials/create-product';
 
 .product-container {
-  // background-color: rgba(0, 0, 0, 0.9);
+  .product-btns {
+    text-align: center;
+    padding: 5%;
+
+    input {
+      margin-left: 8px;
+      outline: none;
+      width: 32px;
+      height: 32px;
+    }
+
+    input:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
 
   .product-inner-container {
-    // border-top: 1px solid rgba(0, 0, 0, 0.26);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.26);
-    // background-color: rgba(0, 0, 0, 0.9);
-    padding: 2%;
-
-    // background-image: url(../../public/images/gun2.jpg);
-    // background-position: center center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // opacity: 0.9;
+    padding: 0 2%;
 
     .clearfix:after {
       content: "";

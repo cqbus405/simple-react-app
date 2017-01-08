@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { getUserInfo } from '../../utils/util-auth'
 import { Link } from 'react-router'
+import ic_quit from '../../../public/images/ic_quit.svg'
+import ic_add from '../../../public/images/ic_add1.svg'
 
 class Header extends Component {
   render() {
@@ -10,15 +12,13 @@ class Header extends Component {
 
     return (
       <div className="header-style">
-        <ul>
-          <li>Hello, {name}</li>
-          <li className="button-container">
-            <div> 
-              <Link className="header-create-btn" to={url}>Create</Link>
-              <button onClick={handleLogoutBtnClick}>Logout</button>
-            </div>
-          </li>
-        </ul>
+        <h2>Hello, {name}</h2>
+        <div> 
+          <div className="header-inner-container">
+            <Link className="header-create-btn" to={url}><img src={ic_add} alt="ic_add" /></Link>
+            <input onClick={handleLogoutBtnClick} type="image" src={ic_quit} />
+          </div>
+        </div>
       </div>
     )
   }

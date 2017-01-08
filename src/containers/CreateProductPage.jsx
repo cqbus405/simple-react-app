@@ -12,6 +12,7 @@ class CreateProductPage extends Component {
 
     return (
       <div>
+        <h1 className="create-product-title">Create Product</h1>
         <CreateProductForm status={status} errMsg={errMsg} btnNames={btnType} createProduct={createProduct} goBack={goBack} />
       </div>
     )

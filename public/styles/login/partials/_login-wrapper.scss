@@ -5,18 +5,20 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.26);
+  padding: 12%;
 
-  @mixin border-radius($radius) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    border-radius: $radius;
-  }
+  // @mixin border-radius($radius) {
+  //   -webkit-border-radius: $radius;
+  //   -moz-border-radius: $radius;
+  //   border-radius: $radius;
+  // }
 
-  img {
-    width: 96px;
-    height: 96px;
-    @include border-radius(50%);
-    // border: 1px solid rgba(0, 0, 0, 1);
-    margin-bottom: 24%;
-  }
+  // img {
+  //   width: 96px;
+  //   height: 96px;
+  //   @include border-radius(50%);
+  //   margin-bottom: 24%;
+  //   border: 1px solid black;
+  // }
 }
