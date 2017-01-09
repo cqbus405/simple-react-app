@@ -9,6 +9,9 @@ import * as generalActions from './action-general'
 import {
   redirectTo
 } from '../utils/util-general'
+import {
+  getVerificationCodeIfNeeded
+} from './action-captcha'
 
 const login = loginInfo => dispatch => {
   dispatch(generalActions.sendRequest(types.REQUEST_LOGIN))
@@ -76,7 +79,6 @@ const logout = () => dispatch => {
     })
     .catch(error => {
       dispatch(generalActions.handleError(types.HANDLE_LOGOUT_ERROR, 'Logout error'))
-      console.log(error)
     })
 }
 

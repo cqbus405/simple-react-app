@@ -13,6 +13,9 @@ import {
   product
 } from '../reducers/reducer-product'
 import {
+  captcha
+} from '../reducers/reducer-captcha'
+import {
   combineReducers
 } from 'redux'
 
@@ -26,7 +29,8 @@ const middleware = applyMiddleware(
 const rootReducer = combineReducers({
   user,
   products,
-  product
+  product,
+  captcha
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

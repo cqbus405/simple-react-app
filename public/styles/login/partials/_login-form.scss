@@ -4,10 +4,12 @@ $open-sans: 'Open Sans', sans-serif;
 $font-color-input: rgba(0 ,0, 0, 0.87);
 $font-color-button: rgba(255, 255, 255, 0.87);
 $border-color: #FF99CC;
+$width: 240px;
+$height: 36px;
 
 .login-form__input {
-  width: 288px;
-  height: 46px;
+  width: $width;
+  height: $height;
   padding: 16px;
   margin-bottom: 8px;
   font-family: $open-sans;
@@ -19,11 +21,11 @@ $border-color: #FF99CC;
 }
 
 .login-form__captcha {
-  width: 288px;
-  height: 46px;
+  width: $width;
+  height: $height;
 
   .login-captcha-input {
-    width: 150px;
+    width: 140px;
     height: 100%;
     float: left;
     padding: 16px;
@@ -35,17 +37,17 @@ $border-color: #FF99CC;
     outline: none;
   }
 
-  img {
-    display: inline-block;
+  .login-verification-code {
     float: right;
-    width: 120px;
+    width: 80px;
     height: 100%;
+    outline: none;
   }
 }
 
 .login-form__submit {
-  width: 288px;
-  height: 46px;
+  width: $width;
+  height: $height;
   border: none;
   background-color: black;
   color: $font-color-button;

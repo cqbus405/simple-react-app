@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import ic_gun from '../../../public/images/gun.jpg'
+import VerificationItem from './VerificationItem'
 
 export default class LoginForm extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ export default class LoginForm extends Component {
     this.state = {
       email: '',
       password: '',
-      verificationCode: ''
+      captcha: ''
     }
 
     this.handleEmailChange = this.handleEmailChange.bind(this)
@@ -18,18 +18,17 @@ export default class LoginForm extends Component {
   }
 
   render() {
+    const { verificationCode, getVerificationCode } = this.props
+
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <input className="login-form__input" type="text" placeholder="Email" name="email" onChange={this.handleEmailChange} />
         <br />
         <input className="login-form__input" type="password" placeholder="Password" name="password" onChange={this.handlePasswordChange} />
-        <div className="login-form__captcha">
-          <input className="login-captcha-input" type="text" placeholder="Verification Code" name="captcha" onChange={this.handleCaptchaChange} />
-          <img src={ic_gun} alt="captcha" />
-        </div>
+        {verificationCode ? <VerificationItem verificationCode={verificationCode} getVerificationCode={getVerificationCode} onChange={this.handleCaptchaChange} /> : null}
         <br />
         <br />
-        <input className="login-form__submit" type="submit" value="Login" />
+        <input className="login-form__submit" type="submit" value="Login" onClick={this.handleSubmit} />
       </form>
     )
   }
@@ -54,10 +53,13 @@ export default class LoginForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    this.props.onSubmit(this.state.email, this.state.password, this.state.verificationCode)
+    this.props.onSubmit(this.state.email, this.state.password, this.state.captcha)
   }
 }
 
 LoginForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired,
+  verificationCode: PropTypes.string,
+  getVerificationCode: PropTypes.func,
+  doLogin: PropTypes.func
 }
