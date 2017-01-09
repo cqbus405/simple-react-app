@@ -3,7 +3,6 @@ import Indicator from '../components/common/Indicator'
 import LoginForm from '../components/login/LoginForm'
 import ErrorMessage from '../components/common/ErrorMessage'
 import { connect } from 'react-redux'
-import jinx from '../../public/images/jinx.jpeg'
 import { doLoginIfNeeded } from '../actions/action-user'
 
 class LoginPage extends Component {
@@ -23,10 +22,11 @@ class LoginPage extends Component {
     )
   }
 
-  _login(email, password) {
+  _login(email, password, verificationCode) {
     this.props.dispatch(doLoginIfNeeded({
       email,
-      password
+      password,
+      verificationCode
     }))
   }
 }

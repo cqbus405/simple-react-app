@@ -18,9 +18,30 @@ $border-color: #FF99CC;
   outline: none;
 }
 
-// .login-form__input:hover {
-//   outline: 2px solid $border-color;
-// }
+.login-form__captcha {
+  width: 288px;
+  height: 46px;
+
+  .login-captcha-input {
+    width: 150px;
+    height: 100%;
+    float: left;
+    padding: 16px;
+    font-family: $open-sans;
+    color: $font-color-input;
+    font-size: 0.75em;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    outline: none;
+  }
+
+  img {
+    display: inline-block;
+    float: right;
+    width: 120px;
+    height: 100%;
+  }
+}
 
 .login-form__submit {
   width: 288px;

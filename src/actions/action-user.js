@@ -20,7 +20,8 @@ const login = loginInfo => dispatch => {
       },
       body: JSON.stringify({
         email: loginInfo.email,
-        password: loginInfo.password
+        password: loginInfo.password,
+        verification_code: loginInfo.verificationCode
       })
     })
     .then(response => generalActions.checkStatus(response))
