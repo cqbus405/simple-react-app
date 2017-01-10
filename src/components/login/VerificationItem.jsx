@@ -16,7 +16,7 @@ class VerificationItem extends Component {
 VerificationItem.propTypes = {
   verificationCode: PropTypes.string,
   getVerificationCode: PropTypes.func,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 }
 
 export default VerificationItem

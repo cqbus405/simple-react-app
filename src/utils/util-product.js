@@ -11,17 +11,3 @@ export const getProductInfo = () => {
     return productInfoObj
   }
 }
-
-export const setState = (key, value) => {
-  const stateStr = JSON.stringify(value)
-  sessionStorage[key] = stateStr
-}
-
-export const getState = key => {
-  const stateStr = sessionStorage[key]
-
-  if (stateStr) {
-    const stateObj = JSON.parse(stateStr)
-    return stateObj
-  }
-}

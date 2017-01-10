@@ -40,6 +40,8 @@ const login = loginInfo => dispatch => {
         }
         setUserInfo(userInfo)
         redirectTo('/products')
+      } else {
+        dispatch(getVerificationCodeIfNeeded())
       }
     })
     .catch(error => {
