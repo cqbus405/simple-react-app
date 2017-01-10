@@ -20,8 +20,14 @@ class LoginPage extends Component {
   }
 
   componentDidMount() {
+    document.getElementById('body').className='home-style'
+
     const { getVerificationCode } = this.props
     getVerificationCode()
+  }
+
+  componentWillUnmount() {
+    document.getElementById('body').className=''
   }
 }
 
