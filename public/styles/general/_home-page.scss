@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico|Open+Sans:700');
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Open+Sans');
 
-$pacifico: 'Pacifico', cursive;
+$quicksand: 'Quicksand', sans-serif;
 $open-sans: 'Open Sans', sans-serif;
 
 .home-style {
@@ -16,7 +16,7 @@ $open-sans: 'Open Sans', sans-serif;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: $pacifico;
+  font-family: $quicksand;
   font-size: 4.5em;
   color: rgba(0, 0, 0, 0.87);
 }
@@ -27,9 +27,9 @@ $open-sans: 'Open Sans', sans-serif;
   left: 50%;
   transform: translate(-5%, -50%);
   font-family: $open-sans;
-  font-weight: 700;
-  font-size: 0.875em;
-  color: rgba(0, 0, 0, 0.87);
+  // font-weight: 700;
+  font-size: 0.75em;
+  color: rgba(0, 0, 0, 0.26);
 }
 
 .home-link-wrapper {

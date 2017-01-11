@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto');
 
 $roboto: 'Roboto', sans-serif;
 $open-sans: 'Open Sans', sans-serif;
@@ -13,7 +13,9 @@ $open-sans: 'Open Sans', sans-serif;
   width: 33.33333%;
 
   .product-responsive-block {
-    // border: 1px solid blue;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 1%;
+    // box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
   }
 
   .product-image-block-title {
@@ -23,32 +25,31 @@ $open-sans: 'Open Sans', sans-serif;
 
   .product-responsive-image-block {
     @extend .product-responsive-content;
-    cursor: pointer;
+    margin-bottom: 0;
 
     img {
       width: 100%;
-      height: auto;
+      height: 100px;
       opacity: 0.8;
-      // border: 1px solid blue;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      cursor: pointer;
     }
 
     img:hover {
       opacity: 1;
     }
   }
-
-  .product-add-btn {
-
-  }
 }
 
 .product-responsive-title {
   font-family: $roboto;
+  font-weight: 600;
   font-size: 1.5em;
   color: rgba(0, 0, 0, 0.87);
   margin-top: 0;
-  padding-left: 2%;
-  padding-top: 2%; 
+  padding: 3%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  // background-color: rgba(0, 0, 0, 0.87)
 }
 
 .product-responsive-content {
@@ -70,4 +71,19 @@ $open-sans: 'Open Sans', sans-serif;
   font-size: 0.75em;
   color: rgba(233, 62, 97, 0.87);
   text-decoration: none;
+}
+
+.product-add-btn {
+  // border: 1px dotted rgba(0, 0, 0, 0.26);
+  padding: 2%;
+  margin: 0 5% 5%;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.product-add-btn:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.1);
+  // border-radius: 5px;
 }

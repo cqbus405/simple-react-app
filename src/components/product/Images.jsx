@@ -11,9 +11,9 @@ class Images extends Component {
         <div className="product-image-block-title">Pictures</div>
         <div className="product-responsive-image-block">
           {imgArr ?  imgArr.map((img, key) => <Image img={img} key={key} />) : null}
-          <AddImage />
           <div className="clearfix"></div>
         </div>
+        <AddImage />
       </div>
     )
   }

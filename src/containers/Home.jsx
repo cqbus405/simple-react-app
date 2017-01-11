@@ -24,7 +24,7 @@ class Home extends Component {
     return (
       <div>
         <div className="home-link-title">
-          Made By Q With <img src={ic_love} alt="ic_love" />
+          Made By <mark>Q</mark> With <img src={ic_love} alt="ic_love" />
         </div>
         <div className="home-link-year">
           2017
