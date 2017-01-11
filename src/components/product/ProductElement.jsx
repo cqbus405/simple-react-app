@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import GeneralInfo from './GeneralInfo'
 import Description from './Description'
 import Specification from './Specification'
-import Images from './Images'
+import Media from './Media'
 import ic_back from '../../../public/images/ic_back.svg'
 import ic_delete from '../../../public/images/ic_delete.svg'
 import ic_edit2 from '../../../public/images/ic_edit2.svg'
@@ -11,7 +11,7 @@ import { getProductInfo } from '../../utils/util-product'
 
 class ProductElement extends Component {
   render() {
-    const { product, deleteProduct, redirectTo } = this.props
+    const { product, deleteProduct, redirectTo, imgArr } = this.props
 
     const generalInfoObj = {
       id: product.id,
@@ -20,10 +20,12 @@ class ProductElement extends Component {
       modified: product.modified
     }
 
-    const descriptionObj = {
-      description: product.description,
-      videoUrl: product.videoUrl
+    const mediaObj = {
+      videoUrl: product.videoUrl,
+      imgArr
     }
+
+    const description = product.description
 
     const specification = product.specification
 
@@ -39,8 +41,8 @@ class ProductElement extends Component {
           <input src={ic_delete} type="image" onClick={() => deleteProduct(id, token)} />
         </div>
         <div className="product-inner-container">
-          <Images />
-          <Description description={descriptionObj} />
+          <Media mediaObj={mediaObj} />
+          <Description description={description} />
           <Specification specification={specification} />
           <div className="clearfix"></div>
         </div>
@@ -52,8 +54,8 @@ class ProductElement extends Component {
 ProductElement.propTypes = {
   product: PropTypes.object,
   deleteProduct: PropTypes.func,
-  btnNames: PropTypes.object,
-  redirectTo: PropTypes.func
+  redirectTo: PropTypes.func,
+  imgArr: PropTypes.array
 }
 
 export default ProductElement

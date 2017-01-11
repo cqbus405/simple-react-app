@@ -4,22 +4,14 @@ import { formatText } from '../../utils/util-general'
 class Description extends Component {
   render() {
     const { description } = this.props
-    const descriptionStr = description.description
-    const videoUrl = description.videoUrl
 
-    const formattedDescription = formatText(descriptionStr)
+    const formattedDescription = formatText(description)
 
     return (
       <div className="product-responsive">
         <div className="product-responsive-block">
-          <div>
-            <p className="product-responsive-title">Description</p>
-            <p className="product-responsive-content" dangerouslySetInnerHTML={{__html: formattedDescription}}></p>
-          </div>
-          <div>
-            <p className="product-responsive-title">Video Url</p>
-            <a className="product-responsive-link" href={videoUrl}>{videoUrl}</a>
-          </div>
+          <p className="product-responsive-title">Description</p>
+          <p className="product-responsive-content" dangerouslySetInnerHTML={{__html: formattedDescription}}></p>
         </div>
       </div>
     )
@@ -27,7 +19,7 @@ class Description extends Component {
 }
 
 Description.propTypes = {
-  description: PropTypes.object
+  description: PropTypes.string
 }
 
 export default Description

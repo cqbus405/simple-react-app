@@ -10,9 +10,17 @@ class ProductPage extends Component {
   render() {
     const { product, deleteProduct } = this.props
 
+    const imgArr = [
+      'pic_android.jpg',
+      'pic_android2.jpg',
+      'pic_dota.jpg',
+      'pic_jinx.jpeg',
+      'pic_jinx2.jpeg'
+    ]
+
     return (
       <div>
-        {product ? <ProductElement product={product} deleteProduct={deleteProduct} redirectTo={redirectTo} /> : null}
+        {product ? <ProductElement product={product} deleteProduct={deleteProduct} redirectTo={redirectTo} imgArr={imgArr} /> : null}
       </div>
     )
   }

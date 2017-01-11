@@ -1,18 +1,23 @@
-import React, { Component } from 'react'
-import img_android from '../../../public/images/gun2.jpg'
+import React, { Component, PropTypes } from 'react'
 
 class Image extends Component {
   render() {
+    const { img } = this.props
+
     return (
       <div className="product-responsive">
-        <div className="product-responsive-image-block">
+        <div>
           <a>
-            <img src={img_android} alt="android-n" width="600" height="400" />
+            <img src={img} alt="img" />
           </a>
         </div>
       </div>
     )
   }
+}
+
+Image.propTypes = {
+  imgArr: PropTypes.array
 }
 
 export default Image

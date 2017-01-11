@@ -13,19 +13,32 @@ $open-sans: 'Open Sans', sans-serif;
   width: 33.33333%;
 
   .product-responsive-block {
+    // border: 1px solid blue;
+  }
 
+  .product-image-block-title {
+    @extend .product-responsive-title;
+    margin-bottom: 24px;
   }
 
   .product-responsive-image-block {
+    @extend .product-responsive-content;
+    cursor: pointer;
+
     img {
       width: 100%;
       height: auto;
       opacity: 0.8;
+      // border: 1px solid blue;
     }
 
     img:hover {
       opacity: 1;
     }
+  }
+
+  .product-add-btn {
+
   }
 }
 
@@ -39,6 +52,7 @@ $open-sans: 'Open Sans', sans-serif;
 }
 
 .product-responsive-content {
+  // border-top: 1px solid rgba(0, 0, 0, 0.26);
   font-family: $open-sans;
   font-size: 0.75em;
   word-spacing: 1.5px;

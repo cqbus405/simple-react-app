@@ -24,8 +24,9 @@ $open-sans: 'Open Sans', sans-serif;
 
       .header-create-btn {
         display: inline-block;
-        height: 32px;
-        width: 32px;
+        height: 28px;
+        width: 28px;
+        // background-color: rgba(0, 0, 0, 0.1);
       }
 
       .header-create-btn:hover {
@@ -33,11 +34,12 @@ $open-sans: 'Open Sans', sans-serif;
       }
 
       input {
-        height: 32px;
-        width: 32px;
+        height: 28px;
+        width: 28px;
         cursor: pointer;
         margin-left: 8px;
         outline: none;
+        // background-color: rgba(0, 0, 0, 0.1);
       }
 
       input:hover {
