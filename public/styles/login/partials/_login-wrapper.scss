@@ -12,4 +12,20 @@
   padding: 5%;
   background-color: rgba(0, 0, 0, 0.54);
   border-radius: 1%;
+
+  .login-close-btn {
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    padding: 1px;
+    border-radius: 50%;
+  }
+
+  .login-close-btn:hover {
+    background-color: rgba(0, 0, 0, 0.26);
+  }
+
+  .login-form-wrapper {
+    padding: 5%;
+  }
 }

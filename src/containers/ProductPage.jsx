@@ -20,6 +20,11 @@ class ProductPage extends Component {
       pic_android2,
       pic_dota,
       pic_jinx,
+      pic_jinx2,
+      pic_android,
+      pic_android2,
+      pic_dota,
+      pic_jinx,
       pic_jinx2
     ]
 

@@ -24,10 +24,10 @@ class Home extends Component {
     return (
       <div>
         <div className="home-link-title">
-          Made By <mark>Q</mark> With <img src={ic_love} alt="ic_love" />
+          Management System
         </div>
         <div className="home-link-year">
-          2017
+          Made by Q with <img src={ic_love} alt="ic_love" /> @2017
         </div>
         <div className="home-link-wrapper">
           <Link className="home-link" to={path}><img src={ic_enter} alt="ic_enter" /></Link>

@@ -21,7 +21,7 @@ export default class LoginForm extends Component {
     const { verificationCode, getVerificationCode } = this.props
 
     return (
-      <form>
+      <form className="login-form-wrapper">
         <input className="login-form__input" type="text" placeholder="Email" name="email" onChange={this.handleEmailChange} />
         <br />
         <input className="login-form__input" type="password" placeholder="Password" name="password" onChange={this.handlePasswordChange} />

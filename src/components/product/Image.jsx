@@ -5,12 +5,10 @@ class Image extends Component {
     const { img } = this.props
 
     return (
-      <div className="product-responsive">
-        <div>
-          <a>
-            <img src={img} alt="img" />
-          </a>
-        </div>
+      <div className="product-image-container">
+        <a>
+          <img src={img} alt="img" />
+        </a>
       </div>
     )
   }

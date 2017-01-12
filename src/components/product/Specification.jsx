@@ -8,11 +8,9 @@ class Specification extends Component {
     const formattedSpecification = formatText(specification)
 
     return (
-      <div className="product-responsive">
-        <div className="product-responsive-block">
-          <p className="product-responsive-title">Specification</p>
-          <div className="product-responsive-content" dangerouslySetInnerHTML={{__html: formattedSpecification}}></div>
-        </div>
+      <div className="product-item-container">
+        <p className="product-responsive-title">Specification</p>
+        <p className="product-responsive-content" dangerouslySetInnerHTML={{__html: formattedSpecification}}></p>
       </div>
     )
   }

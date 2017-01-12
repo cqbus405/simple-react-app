@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import Image from './Image'
 import AddImage from './AddImage'
 
@@ -7,16 +7,19 @@ class Images extends Component {
     const { imgArr } = this.props
 
     return (
-      <div>
-        <div className="product-image-block-title">Pictures</div>
-        <div className="product-responsive-image-block">
+      <div className="product-item-container">
+        <p className="product-responsive-title">Pictures</p>
+        <div className="product-inner-container">
           {imgArr ?  imgArr.map((img, key) => <Image img={img} key={key} />) : null}
-          <div className="clearfix"></div>
         </div>
         <AddImage />
       </div>
     )
   }
+}
+
+Images.propTypes = {
+  imgArr: PropTypes.array
 }
 
 export default Images

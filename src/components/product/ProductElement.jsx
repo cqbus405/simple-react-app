@@ -2,7 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import GeneralInfo from './GeneralInfo'
 import Description from './Description'
 import Specification from './Specification'
-import Media from './Media'
+// import Media from './Media'
+import VideoUrl from './VideoUrl'
+import Images from './Images'
 import ic_back from '../../../public/images/ic_back.svg'
 import ic_delete from '../../../public/images/ic_delete.svg'
 import ic_edit2 from '../../../public/images/ic_edit2.svg'
@@ -20,10 +22,7 @@ class ProductElement extends Component {
       modified: product.modified
     }
 
-    const mediaObj = {
-      videoUrl: product.videoUrl,
-      imgArr
-    }
+    const videoUrl = product.videoUrl
 
     const description = product.description
 
@@ -41,10 +40,10 @@ class ProductElement extends Component {
           <input src={ic_delete} type="image" onClick={() => deleteProduct(id, token)} />
         </div>
         <div className="product-inner-container">
-          <Media mediaObj={mediaObj} />
+          <Images imgArr={imgArr} />
+          <VideoUrl videoUrl={videoUrl} />
           <Description description={description} />
           <Specification specification={specification} />
-          <div className="clearfix"></div>
         </div>
       </div>
     )

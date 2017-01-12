@@ -8,11 +8,9 @@ class Description extends Component {
     const formattedDescription = formatText(description)
 
     return (
-      <div className="product-responsive">
-        <div className="product-responsive-block">
-          <p className="product-responsive-title">Description</p>
-          <p className="product-responsive-content" dangerouslySetInnerHTML={{__html: formattedDescription}}></p>
-        </div>
+      <div className="product-item-container">
+        <p className="product-responsive-title">Description</p>
+        <p className="product-responsive-content" dangerouslySetInnerHTML={{__html: formattedDescription}}></p>
       </div>
     )
   }
