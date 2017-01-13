@@ -40,7 +40,6 @@ class ProductElement extends Component {
           <input src={ic_delete} type="image" onClick={() => deleteProduct(id, token)} />
         </div>
         <div className="product-inner-container">
-          <Images imgArr={imgArr} />
           <VideoUrl videoUrl={videoUrl} />
           <Description description={description} />
           <Specification specification={specification} />
@@ -58,3 +57,5 @@ ProductElement.propTypes = {
 }
 
 export default ProductElement
+
+          // <Images imgArr={imgArr} />
