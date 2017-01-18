@@ -5,10 +5,10 @@ class VerificationItem extends Component {
     const { verificationCode, getVerificationCode, onChange } = this.props
 
     return (
-      <div className="login-form__captcha">
-        <input className="login-captcha-input" type="text" placeholder="Verification Code" name="captcha" onChange={onChange} />
-        <div onClick={getVerificationCode} className="login-verification-code" dangerouslySetInnerHTML={{__html: verificationCode}} />
-      </div>
+      <ul className="verification-item-container">
+        <li><input type="text" placeholder="Verification Code" name="captcha" onChange={onChange} /></li>
+        <li><span onClick={getVerificationCode} dangerouslySetInnerHTML={{__html: verificationCode}}></span></li>
+      </ul>
     )
   }
 }

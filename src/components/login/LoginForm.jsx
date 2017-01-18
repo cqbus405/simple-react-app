@@ -21,14 +21,12 @@ export default class LoginForm extends Component {
     const { verificationCode, getVerificationCode } = this.props
 
     return (
-      <form className="login-form-wrapper">
-        <input className="login-form__input" type="text" placeholder="Email" name="email" onChange={this.handleEmailChange} />
+      <form>
+        <input className="login-form-input-long" type="text" placeholder="Email" name="email" onChange={this.handleEmailChange} />
         <br />
-        <input className="login-form__input" type="password" placeholder="Password" name="password" onChange={this.handlePasswordChange} />
+        <input className="login-form-input-long" type="password" placeholder="Password" name="password" onChange={this.handlePasswordChange} />
         {verificationCode ? <VerificationItem verificationCode={verificationCode} getVerificationCode={getVerificationCode} onChange={this.handleCaptchaChange} /> : null}
-        <br />
-        <br />
-        <input className="login-form__submit" type="submit" value="Login" onClick={this.handleSubmit} />
+        <input className="login-form-btn" type="submit" value="Login" onClick={this.handleSubmit} />
       </form>
     )
   }

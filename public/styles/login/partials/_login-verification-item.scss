@@ -1,0 +1,25 @@
+.verification-item-container {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  li {
+    float: left;
+  }
+
+  input {
+    width: 94px;
+    padding: 10px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.87);
+    margin-right: 8px;
+    outline: none;
+  }
+
+  span {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.87);
+  }
+}

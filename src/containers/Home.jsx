@@ -24,7 +24,7 @@ class Home extends Component {
     return (
       <div>
         <div className="home-link-title">
-          Management System
+          M<b className="mark">a</b>n<b className="mark">a</b>gement S<b className="mark">y</b>stem
         </div>
         <div className="home-link-year">
           Made by Q with <img src={ic_love} alt="ic_love" /> @2017

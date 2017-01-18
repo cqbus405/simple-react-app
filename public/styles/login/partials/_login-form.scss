@@ -1,63 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700');
 
 $open-sans: 'Open Sans', sans-serif;
-$font-color-input: rgba(255 ,255, 255, 0.87);
-$font-color-button: rgba(255, 255, 255, 0.87);
-$border-color: #FF99CC;
-$width: 240px;
-$height: 36px;
 
-.login-form__input {
-  width: $width;
-  height: $height;
-  padding: 16px;
-  margin-bottom: 8px;
-  font-family: $open-sans;
-  color: $font-color-input;
-  font-size: 0.75em;
+.login-form-input-long {
+  width: 182px;
+  padding: 10px 8px;
+  margin-bottom: 4px;
   background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.54);
   outline: none;
-}
-
-.login-form__captcha {
-  width: $width;
-  height: $height;
-
-  .login-captcha-input {
-    width: 140px;
-    height: 100%;
-    float: left;
-    padding: 16px;
-    font-family: $open-sans;
-    color: $font-color-input;
-    font-size: 0.75em;
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.54);
-    outline: none;
-  }
-
-  .login-verification-code {
-    float: right;
-    width: 80px;
-    height: 100%;
-    outline: none;
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-}
-
-.login-form__submit {
-  width: $width;
-  height: $height;
-  border: none;
-  background-color: black;
-  color: $font-color-button;
-  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.26);
   font-family: $open-sans;
-  transition-duration: 0.4s;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.87);
 }
 
-.login-form__submit:hover {
-  background-color: rgba(0, 0, 0, 0.54);
+.login-form-btn {
+  width: 100%;
+  padding: 11px;
+  margin-top: 36px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.87);
+  font-family: $open-sans;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.87);
+  transition: background-color 0.4s;
+}
+
+.login-form-btn:hover {
+  background-color: rgba(255, 255, 255, 0.54);
+  color: rgba(0, 0, 0, 0.54);
 }

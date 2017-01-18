@@ -14,8 +14,8 @@ class LoginPage extends Component {
     const url = '/'
 
     return (
-      <div className="login-page__wrapper">
-        <Link to={url}><img src={ic_close} alt="ic_close" className="login-close-btn" /></Link>
+      <div className="login-page">
+        <Link className="login-page-close-btn" to={url}><img src={ic_close} alt="ic_close" /></Link>
         <LoginForm onSubmit={doLogin} getVerificationCode={getVerificationCode} verificationCode={verificationCode} />
         {this.props.loginFeedback.status === 500 ? <ErrorMessage errorMsg={this.props.loginFeedback.msg} /> : null}
         {this.props.loginFeedback.isFetching ? <Indicator /> : null}

@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700');
 
-$quicksand: 'Quicksand', sans-serif;
 $open-sans: 'Open Sans', sans-serif;
+$Montserrat: 'Montserrat', sans-serif;
 
 .home-style {
   background: url(../../public/images/bg_building.jpg) no-repeat center center fixed; 
@@ -16,9 +16,14 @@ $open-sans: 'Open Sans', sans-serif;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: $quicksand;
+  font-family: $Montserrat;
+  font-weight: 700;
   font-size: 4.5em;
   color: rgba(0, 0, 0, 0.87);
+}
+
+.mark {
+  color: rgba(255, 128, 171, 0.87);
 }
 
 .home-link-year {
@@ -28,7 +33,6 @@ $open-sans: 'Open Sans', sans-serif;
   right: 0;
   font-family: $open-sans;
   text-align: center;
-  // font-weight: 700;
   font-size: 0.75em;
   color: rgba(0, 0, 0, 0.26);
 }
