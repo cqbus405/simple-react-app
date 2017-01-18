@@ -26,3 +26,17 @@ export const btnTypes = {
     rightBtnName: 'Cancel'
   }
 }
+
+export const fileUploadConfig = {
+  imageUploadConfig: {
+    multiple: true,
+    accept: 'image/*',
+    maxSize: 90 * 1024 * 1024
+  },
+
+  avatarUploadConfig: {
+    multiple: false,
+    accept: 'image/*',
+    maxSize: 5 * 1024 * 1024
+  }
+}
