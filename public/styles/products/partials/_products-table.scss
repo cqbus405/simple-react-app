@@ -5,28 +5,40 @@ $open-sans: 'Open Sans', sans-serif;
 
 .products-table {
   overflow-x: auto;
+  margin: 24px;
+  // border: 1px solid rgba(0, 0, 0, 0.26);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
 
   table {
     border-collapse: collapse;
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
 
-    th, td {
+    th {
       text-align: left;
       padding: 16px;
       font-size: 0.75em;
+      color: rgba(0, 0, 0, 0.87);
       font-family: $roboto;
+      // font-weight: 300;
+      // background-color: rgba(255, 255, 255, 1);
+    }
+
+    td {
+      text-align: left;
+      padding: 16px;
+      font-size: 0.75em;
+      font-family: $open-sans;
       color: rgba(0, 0, 0, 0.54);
     }
 
     tr:nth-child(even) {
-      background-color: #F2F2F2;
+      background-color: rgba(3, 169, 244, 0.1);
     }
 
-    th {
-      background-color: black;
-      color: rgba(255, 255, 255, 0.87);
-      font-family: $open-sans;
+    tr:nth-child(1) {
+      background-color: rgba(255, 255, 255, 1);
+      // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
   }
 }

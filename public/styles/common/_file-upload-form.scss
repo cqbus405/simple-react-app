@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600');
+
+$open-sans: 'Open Sans', sans-serif;
+
+.file-upload-form-style {
+  width: 100%;
+  height: 200px;
+  padding: 1%;
+  margin-bottom: 16px;
+  text-align: center;
+  border: 1px dashed rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+  transition: background-color 0.4s;
+
+  p {
+    font-family: $open-sans;
+    color: rgba(0, 0, 0, 0.54);
+    font-weight: 600;
+    font-size: 1.125em;
+  }
+}
+
+.file-upload-form-style:hover {
+   background-color: rgba(0, 0, 0, 0.1);
+}

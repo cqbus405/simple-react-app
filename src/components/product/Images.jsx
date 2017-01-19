@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import Image from './Image'
-import AddImage from './AddImage'
 
 class Images extends Component {
   render() {
@@ -8,11 +7,10 @@ class Images extends Component {
 
     return (
       <div className="product-item-container">
-        <p className="product-responsive-title">Pictures</p>
+        <p className="product-responsive-title">PICTURES</p>
         <div className="product-inner-image-container">
           {imgArr ?  imgArr.map((img, key) => <Image img={img} key={key} />) : null}
         </div>
-        <AddImage />
       </div>
     )
   }

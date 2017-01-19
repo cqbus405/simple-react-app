@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import Buttons from './Buttons'
 import ErrorMessage from '../common/ErrorMessage'
+import FileUploadForm from '../common/FileUploadForm'
+import { fileUploadConfig as conf } from '../../constants/constants'
 
 class CreateProductForm extends Component {
   constructor(props) {
@@ -42,6 +44,8 @@ class CreateProductForm extends Component {
       videoUrl = product.videoUrl
     }
 
+    const imageUploadConfig = conf.imageUploadConfig
+    
     return (
       <div className="create-product-form">
         <form>
@@ -52,6 +56,7 @@ class CreateProductForm extends Component {
           <br />
           <textarea name="specification" placeholder="Specification" onChange={this.handleSpecificationChange} defaultValue={specification ? specification : ''} />
           <h3>Pictures and video</h3>
+          <FileUploadForm fileUploadConfig={imageUploadConfig} />
           <input type="text" name="video_url" placeholder="Video url" onChange={this.handleVideoUrlChange} defaultValue={videoUrl ? videoUrl : ''} />
         </form>
         {status === 500 ? <ErrorMessage errorMsg={errMsg} /> : null}

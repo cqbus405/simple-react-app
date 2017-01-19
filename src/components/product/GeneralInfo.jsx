@@ -5,11 +5,14 @@ class GeneralInfo extends Component {
     const { generalInfo } = this.props
 
     return (
-      <div className="general-info">
-        <div className="title">{generalInfo.name}</div>
-        <div className="id">Id: {generalInfo.id}</div>
-        <div className="created">Created: {generalInfo.created}</div>
-        <div className="modified">Modified: {generalInfo.modified}</div>
+      <div className="product-item-container">
+        <p className="product-responsive-title">GENERAL</p>
+        <div className="product-responsive-content">
+          <div><b>Title</b>: {generalInfo.name}</div>
+          <div><b>Id</b>: {generalInfo.id}</div>
+          <div><b>Created</b>: {generalInfo.created}</div>
+          <div><b>Modified</b>: {generalInfo.modified}</div>
+        </div>
       </div>
     )
   }

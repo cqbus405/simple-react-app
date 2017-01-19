@@ -30,13 +30,13 @@ export const btnTypes = {
 export const fileUploadConfig = {
   imageUploadConfig: {
     multiple: true,
-    accept: 'image/*',
+    accept: 'image/gif,image/jpeg,image/jpg,image/png',
     maxSize: 90 * 1024 * 1024
   },
 
   avatarUploadConfig: {
     multiple: false,
-    accept: 'image/*',
+    accept: 'image/gif,image/jpeg,image/jpg,image/png',
     maxSize: 5 * 1024 * 1024
   }
 }

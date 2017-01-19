@@ -1,50 +1,50 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
 
 $open-sans: 'Open Sans', sans-serif;
 
 .header-style {
-  width: 85%;
-  margin: auto;
-  padding: 12px 0;
+  list-style-type: none;
+  height: 47px;
+  margin: 0;
+  padding: 4px 16px;
+  overflow: hidden;
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+  // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 1);
 
-  h2 {
-    display: inline-block;
-    font-family: $open-sans;
-    font-weight: 400;
-    font-size: 1.125em;
-    color: rgba(0, 0, 0, 0.87);
-  }
+  li {
+    float: left;
 
-  div {
-    display: inline-block;
-    float: right;
-    height: 54px;
+    .header-avatar {
+      width: 47px;
+      height: 47px;
+      border-radius: 50%;
+    }
 
-    .header-inner-container {
-      margin-top: 15px;
+    .header-name {
+      padding: 11px;   
+      font-family: $open-sans;
+      font-size: 1.125em;
+      font-weight: 300;
+      color: rgba(0, 0, 0, 0.87);
+    }
+
+    .header-action-container {
+      padding: 10px;
 
       .header-create-btn {
-        display: inline-block;
-        height: 24px;
         width: 24px;
-        // background-color: rgba(0, 0, 0, 0.1);
+        height: 24px;
+        transition: background-color 0.4s;
       }
 
-      .header-create-btn:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-      }
-
-      input {
-        height: 24px;
+      .header-logout-btn {
         width: 24px;
-        cursor: pointer;
-        margin-left: 16px;
+        height: 24px;
+        margin-left: 8px;
+        transition: background-color 0.4s;
         outline: none;
-        // background-color: rgba(0, 0, 0, 0.1);
-      }
-
-      input:hover {
-        background-color: rgba(0, 0, 0, 0.1);
       }
     }
   }

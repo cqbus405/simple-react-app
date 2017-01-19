@@ -1,9 +1,13 @@
-import { Component, PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import Dropzone from 'react-dropzone'
 
 class FileUploadForm extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      files: []
+    }
 
     this.onFileDrop = this.onFileDrop.bind(this)
   }
@@ -12,18 +16,30 @@ class FileUploadForm extends Component {
     const { fileUploadConfig } = this.props
 
     return (
-      <Dropzone 
-        multiple = {fileUploadConfig.multiple}
-        accept = {fileUploadConfig.accept}
-        onDrop = {this.onFileDrop}>
-        <p>Try dropping some files here, or click to select files to upload.</p>
-      </Dropzone>
+      <div>
+        {this.state.files.length > 0 
+          ? <div>
+                {this.state.files.map((file, key) => <img src={file.preview} alt={key} key={key} />)}
+            </div>
+          : null
+        }
+        <Dropzone
+          className="file-upload-form-style" 
+          multiple={fileUploadConfig.multiple}
+          accept={fileUploadConfig.accept}
+          onDrop={this.onFileDrop}>
+          <p>Drop files here or click to upload.</p>
+        </Dropzone>
+      </div>
     )
   }
 
-  const onFileDrop = (acceptedFiles, rejectedFiles) => {
+  onFileDrop(acceptedFiles, rejectedFiles) {
     console.log('Accepted files: ', acceptedFiles);
     console.log('Rejected files: ', rejectedFiles);
+    this.setState({
+      files: acceptedFiles
+    })
   }
 }
 

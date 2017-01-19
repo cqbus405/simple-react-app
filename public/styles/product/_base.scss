@@ -1,6 +1,10 @@
 @import 'partials/buttons';
-@import 'partials/general-info';
 @import 'partials/create-product';
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,600');
+
+$open-sans: 'Open Sans', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
 
 .product-container {
   
@@ -8,7 +12,7 @@
 
 .product-btns {
   text-align: center;
-  padding: 5%;
+  padding: 4%;
 
   input {
     margin-left: 8px;
@@ -32,6 +36,7 @@
   // align-items: center;
   align-content: center;
   height: auto;
+  margin-bottom: 24px;
 }
 
 .product-image-container {
@@ -54,18 +59,20 @@
 
 .product-item-container {
   width: 30%;
-  margin: 0 2px 2px;
-  border: 1px solid rgba(0, 0, 0, 0.26);
+  margin: 0 12px 16px;
+  // border: 1px solid rgba(0, 0, 0, 0.26);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .product-responsive-title {
-  font-family: $roboto;
+  font-family: $montserrat;
   font-weight: 600;
-  font-size: 1.5em;
+  font-size: 1.125em;
   color: rgba(0, 0, 0, 0.87);
   margin-top: 0;
   padding: 3%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .product-responsive-content {
@@ -84,8 +91,9 @@
 
   a {
     font-family: $open-sans;
+    font-weight: 600;
     font-size: 0.75em;
-    color: rgba(233, 62, 97, 0.87);
+    color: rgba(3, 169, 244, 0.54);
     text-decoration: none;
     word-wrap: break-word;
   }

@@ -9,7 +9,7 @@ class Description extends Component {
 
     return (
       <div className="product-item-container">
-        <p className="product-responsive-title">Description</p>
+        <p className="product-responsive-title">DESCRIPTION</p>
         <p className="product-responsive-content" dangerouslySetInnerHTML={{__html: formattedDescription}}></p>
       </div>
     )

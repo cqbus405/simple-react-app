@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
+import Header from '../common/Header'
 import GeneralInfo from './GeneralInfo'
 import Description from './Description'
 import Specification from './Specification'
-// import Media from './Media'
 import VideoUrl from './VideoUrl'
 import Images from './Images'
 import ic_back from '../../../public/images/ic_back.svg'
@@ -33,13 +33,14 @@ class ProductElement extends Component {
 
     return (
       <div className="product-container">
-        <GeneralInfo generalInfo={generalInfoObj} />
+        <Header />
         <div className="product-btns">
           <input src={ic_back} type="image" onClick={() => redirectTo('/products')} />
           <input src={ic_edit2} type="image" onClick={() => redirectTo('/product/edit')} />
           <input src={ic_delete} type="image" onClick={() => deleteProduct(id, token)} />
         </div>
         <div className="product-inner-container">
+          <GeneralInfo generalInfo={generalInfoObj} />
           <Images imgArr={imgArr} />
           <VideoUrl videoUrl={videoUrl} />
           <Description description={description} />
