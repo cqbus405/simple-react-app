@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 $open-sans: 'Open Sans', sans-serif;
 
@@ -8,8 +8,6 @@ $open-sans: 'Open Sans', sans-serif;
   margin: 0;
   padding: 4px 16px;
   overflow: hidden;
-  // border-bottom: 1px solid rgba(0, 0, 0, 0.26);
-  // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 1);
 
@@ -17,17 +15,16 @@ $open-sans: 'Open Sans', sans-serif;
     float: left;
 
     .header-avatar {
-      width: 47px;
-      height: 47px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
     }
 
     .header-name {
       padding: 11px;   
       font-family: $open-sans;
-      font-size: 1.125em;
-      font-weight: 300;
-      color: rgba(0, 0, 0, 0.87);
+      font-size: 1em;
+      color: rgba(0, 0, 0, 0.54);
     }
 
     .header-action-container {

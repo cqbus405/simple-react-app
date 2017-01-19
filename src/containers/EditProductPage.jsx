@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { goBack } from '../utils/util-general'
 import CreateProductForm from '../components/product/CreateProductForm'
+import Header from '../components/common/Header'
 import { editProductIfNeeded } from '../actions/action-product'
 import { btnTypes } from '../constants/constants'
 import { getProductInfo } from '../utils/util-product'
@@ -15,7 +16,7 @@ class EditProductPage extends Component {
 
     return (
       <div>
-        <h1 className="create-product-title">Edit Product</h1>
+        <Header />
         <CreateProductForm status={status} errMsg={errMsg} btnNames={btnType} goBack={goBack} editProduct={editProduct} product={product} />
       </div>
     )

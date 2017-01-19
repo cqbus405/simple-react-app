@@ -6,7 +6,7 @@ class GeneralInfo extends Component {
 
     return (
       <div className="product-item-container">
-        <p className="product-responsive-title">GENERAL</p>
+        <p className="product-responsive-title">General</p>
         <div className="product-responsive-content">
           <div><b>Title</b>: {generalInfo.name}</div>
           <div><b>Id</b>: {generalInfo.id}</div>

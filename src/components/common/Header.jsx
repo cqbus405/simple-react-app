@@ -3,7 +3,7 @@ import { getUserInfo } from '../../utils/util-auth'
 import { Link } from 'react-router'
 import ic_quit from '../../../public/images/ic_logout.svg'
 import ic_create from '../../../public/images/ic_create.svg'
-import pic_jinx from '../../../public/images/pic_jinx.jpeg'
+import pic_jinx from '../../../public/images/pic_jinx2.jpeg'
 
 class Header extends Component {
   render() {
@@ -17,7 +17,7 @@ class Header extends Component {
           <img className="header-avatar" src={pic_jinx} alt="pic_jinx" />
         </li>
         <li>
-          <div className="header-name">Hello, {name}</div>
+          <div className="header-name">{name}</div>
         </li>
         <li style={{float: "right"}}>
           <div className="header-action-container">

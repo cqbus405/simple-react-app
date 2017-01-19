@@ -20,8 +20,6 @@ $open-sans: 'Open Sans', sans-serif;
       font-size: 0.75em;
       color: rgba(0, 0, 0, 0.87);
       font-family: $roboto;
-      // font-weight: 300;
-      // background-color: rgba(255, 255, 255, 1);
     }
 
     td {
@@ -33,12 +31,11 @@ $open-sans: 'Open Sans', sans-serif;
     }
 
     tr:nth-child(even) {
-      background-color: rgba(3, 169, 244, 0.1);
+      background-color: rgba(3, 169, 244, 0.26);
     }
 
     tr:nth-child(1) {
       background-color: rgba(255, 255, 255, 1);
-      // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
   }
 }
