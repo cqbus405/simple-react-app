@@ -7,7 +7,7 @@ class VerificationItem extends Component {
     return (
       <ul className="verification-item-container">
         <li><input type="text" placeholder="Verification Code" name="captcha" onChange={onChange} /></li>
-        <li><span onClick={getVerificationCode} dangerouslySetInnerHTML={{__html: verificationCode}}></span></li>
+        <li><div onClick={getVerificationCode} dangerouslySetInnerHTML={{__html: verificationCode}}></div></li>
       </ul>
     )
   }

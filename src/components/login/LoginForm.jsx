@@ -21,9 +21,8 @@ export default class LoginForm extends Component {
     const { verificationCode, getVerificationCode } = this.props
 
     return (
-      <form>
+      <form className="login-page-form">
         <input className="login-form-input-long" type="text" placeholder="Email" name="email" onChange={this.handleEmailChange} />
-        <br />
         <input className="login-form-input-long" type="password" placeholder="Password" name="password" onChange={this.handlePasswordChange} />
         {verificationCode ? <VerificationItem verificationCode={verificationCode} getVerificationCode={getVerificationCode} onChange={this.handleCaptchaChange} /> : null}
         <input className="login-form-btn" type="submit" value="Login" onClick={this.handleSubmit} />

@@ -6,8 +6,14 @@
 @import 'product/base';
 @import 'general/base';
 
-html, body {
+html, body, #app {
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
-  background-color: rgba(250, 250, 250, 1);
+  background-color: rgba(238, 238, 238, 1);
+}
+
+.root, {
+  height: 100%;
 }

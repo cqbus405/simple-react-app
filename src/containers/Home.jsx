@@ -2,14 +2,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { getUserInfo } from '../utils/util-auth'
 import ic_enter from '../../public/images/ic_enter.svg'
-// import ic_tomato from '../../public/images/ic_tomato.svg'
 import ic_love from '../../public/images/ic_love.svg'
 
 class Home extends Component {
-  componentDidMount() {
-    document.getElementById('body').className='home-style'
-  }
-
   render() {
     const loggedIn = !!getUserInfo()
 
@@ -36,9 +31,13 @@ class Home extends Component {
     )
   }
 
-  componentWillUnmount() {
-    document.getElementById('body').className=''
-  }
+  // componentDidMount() {
+  //   document.getElementById('body').className='home-style'
+  // }
+
+  // componentWillUnmount() {
+  //   document.getElementById('body').className=''
+  // }
 }
 
 export default Home

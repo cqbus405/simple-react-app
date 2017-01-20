@@ -4,7 +4,7 @@ import Home from './Home'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div id="app">
         {this.props.children || <Home />}
       </div>
     )
