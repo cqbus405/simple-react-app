@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import CreateProductForm from '../components/product/CreateProductForm'
+import Header from '../components/common/Header'
 import { addProductIfNeeded } from '../actions/action-product'
 import { goBack } from '../utils/util-general'
 import { btnTypes } from '../constants/constants'
@@ -12,7 +13,7 @@ class CreateProductPage extends Component {
 
     return (
       <div>
-        <h1 className="create-product-title">Create Product</h1>
+        <Header />
         <CreateProductForm status={status} errMsg={errMsg} btnNames={btnType} createProduct={createProduct} goBack={goBack} />
       </div>
     )

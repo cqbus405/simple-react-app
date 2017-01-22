@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Dropzone from 'react-dropzone'
+import ic_circle_image from '../../../public/images/ic_image.svg'
 
 class FileUploadForm extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class FileUploadForm extends Component {
       <div>
         {this.state.files.length > 0 
           ? <div>
-                {this.state.files.map((file, key) => <img src={file.preview} alt={key} key={key} />)}
+              {this.state.files.map((file, key) => <img src={file.preview} alt={key} key={key} />)}
             </div>
           : null
         }
@@ -28,7 +29,8 @@ class FileUploadForm extends Component {
           multiple={fileUploadConfig.multiple}
           accept={fileUploadConfig.accept}
           onDrop={this.onFileDrop}>
-          <p>Drop files here or click to upload.</p>
+          <img src={ic_circle_image} alt="ic_circle_image" />
+          <p>Drag & Drop</p>
         </Dropzone>
       </div>
     )

@@ -49,13 +49,13 @@ class CreateProductForm extends Component {
     return (
       <div className="create-product-form">
         <form>
-          <h3>General Information</h3>
+          <div className="create-product-form-title">General Information</div>
           <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} defaultValue={title ? title : ''} />
           <br />
           <textarea name="description" placeholder="Description" onChange={this.handleDescriptionChange} defaultValue={description ? description : ''} />
           <br />
           <textarea name="specification" placeholder="Specification" onChange={this.handleSpecificationChange} defaultValue={specification ? specification : ''} />
-          <h3>Pictures and video</h3>
+          <div className="create-product-form-title">Pictures and video</div>
           <FileUploadForm fileUploadConfig={imageUploadConfig} />
           <input type="text" name="video_url" placeholder="Video url" onChange={this.handleVideoUrlChange} defaultValue={videoUrl ? videoUrl : ''} />
         </form>

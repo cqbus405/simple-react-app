@@ -1,9 +1,9 @@
 .loading {
   width: 150px;
-  height: 15px;
   margin: 0 auto;
-  margin-top: 50px;
   text-align: center;
+  position: relative;
+  top: 30%;
 
   span {
     display: inline-block;

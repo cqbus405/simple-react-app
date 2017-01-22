@@ -30,7 +30,12 @@ class ProductsPage extends Component {
       <div>
         <Header handleLogoutBtnClick={handleLogoutBtnClick} />
         <ProductsTable products={products} />
-        {fetching ? <Indicator2 /> : (pages !== 0 ? <Pages pages={pages} arr={arr} handlePageBtnClick={handlePageBtnClick} /> : <Message msg='No item' />)}
+        {fetching 
+          ? <Indicator2 /> 
+          : (pages !== 0 
+            ? <Pages pages={pages} arr={arr} handlePageBtnClick={handlePageBtnClick} /> 
+            : <Message msg='No item' />)
+        }
       </div>
     )
   }

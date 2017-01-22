@@ -3,6 +3,9 @@
 $open-sans: 'Open Sans', sans-serif;
 
 .login-error__msg {
+  position: relative;
+  top: 28%;
+  left: 0;  
   text-align: center;
 
   p {

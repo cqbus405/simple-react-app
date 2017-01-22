@@ -13,7 +13,9 @@ export const getUserInfo = () => {
 }
 
 export const checkAuth = (nextState, replace) => {
-  if (!!getUserInfo()) {
-    replace('/')
+  const userInfo = getUserInfo()
+
+  if (userInfo) {
+    replace('/products')
   }
 }

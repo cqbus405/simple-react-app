@@ -5,32 +5,29 @@ import ErrorMessage from '../components/common/ErrorMessage'
 import { connect } from 'react-redux'
 import { doLoginIfNeeded } from '../actions/action-user'
 import { getVerificationCodeIfNeeded } from '../actions/action-captcha'
-import ic_close from '../../public/images/ic_close.svg'
-import bg_building from '../../public/images/bg_building.jpg'
-import bg_sf from '../../public/images/bg_sf.jpg'
-import bg_community from '../../public/images/bg_community.jpg'
-import { Link } from 'react-router'
+import bg_new_year from '../../public/images/bg_new_year.jpg'
+import ic_love from '../../public/images/ic_love.svg'
 
 class LoginPage extends Component {
   render() {
     const { getVerificationCode, verificationCode, doLogin} = this.props
-    const url = '/'
 
-    // return (
-    //   <div className="login-page">
-    //     <Link className="login-page-close-btn" to={url}><img src={ic_close} alt="ic_close" /></Link>
-    //     <LoginForm onSubmit={doLogin} getVerificationCode={getVerificationCode} verificationCode={verificationCode} />
-    //     {this.props.loginFeedback.status === 500 ? <ErrorMessage errorMsg={this.props.loginFeedback.msg} /> : null}
-    //     {this.props.loginFeedback.isFetching ? <Indicator /> : null}
-    //   </div>
-    // )
     return (
       <div className="login-page-flex-box">
         <div className="login-page-flex-form-container">
+          <div className="login-page-flex-form-title">Multithink</div>
           <LoginForm onSubmit={doLogin} getVerificationCode={getVerificationCode} verificationCode={verificationCode} />
+          {this.props.loginFeedback.status === 500 ? <ErrorMessage errorMsg={this.props.loginFeedback.msg} /> : null}
+          {this.props.loginFeedback.isFetching ? <Indicator /> : null}
+          <div className="login-page-flex-form-footer">
+            Made by Q with <img src={ic_love} alt="ic_love" /> @2017
+          </div>
         </div>
         <div className="login-page-flex-image-container">
-          <img src={bg_community} alt="bg_community" />
+          <img src={bg_new_year} alt="bg_new_year" />
+          <div className="login-page-flex-text">
+            M<b className="mark-style">a</b>n<b className="mark-style">a</b>gement<br/>S<b className="mark-style">y</b>stem
+          </div>
         </div>
       </div>
     )
