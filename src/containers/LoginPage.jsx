@@ -5,7 +5,6 @@ import ErrorMessage from '../components/common/ErrorMessage'
 import { connect } from 'react-redux'
 import { doLoginIfNeeded } from '../actions/action-user'
 import { getVerificationCodeIfNeeded } from '../actions/action-captcha'
-import bg_new_year from '../../public/images/bg_new_year.jpg'
 import ic_love from '../../public/images/ic_love.svg'
 
 class LoginPage extends Component {
@@ -24,7 +23,6 @@ class LoginPage extends Component {
           </div>
         </div>
         <div className="login-page-flex-image-container">
-          <img src={bg_new_year} alt="bg_new_year" />
           <div className="login-page-flex-text">
             M<b className="mark-style">a</b>n<b className="mark-style">a</b>gement<br/>S<b className="mark-style">y</b>stem
           </div>
@@ -76,3 +74,5 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(LoginPage)
+
+// <img src={bg_nyc} alt="bg_nyc" />

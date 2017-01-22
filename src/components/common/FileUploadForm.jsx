@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Dropzone from 'react-dropzone'
+import Images from './Images'
 import ic_circle_image from '../../../public/images/ic_image.svg'
 
 class FileUploadForm extends Component {
@@ -19,9 +20,7 @@ class FileUploadForm extends Component {
     return (
       <div>
         {this.state.files.length > 0 
-          ? <div>
-              {this.state.files.map((file, key) => <img src={file.preview} alt={key} key={key} />)}
-            </div>
+          ? <Images files={this.state.files} />
           : null
         }
         <Dropzone

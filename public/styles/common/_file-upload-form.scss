@@ -21,5 +21,9 @@ $open-sans: 'Open Sans', sans-serif;
 }
 
 .file-upload-form-style:hover {
-   background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
+
+  p {
+    color: rgba(0, 0, 0, 0.15);
+  }
 }
