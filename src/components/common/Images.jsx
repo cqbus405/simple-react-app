@@ -3,18 +3,21 @@ import Image from './Image'
 
 class Images extends Component {
   render() {
-    const { files } = this.props
+    const { files, removeFile } = this.props
 
     return (
       <div className="file-upload-form-images-container">
-        {files.map((file, key) => <Image image={file.preview} key={key} />)}
+        {files.map((file, index, array) => {
+          return <Image image={file.preview} key={index} index={index} removeFile={removeFile} files={files} />
+        })}
       </div>
     )
   }
 }
 
 Image.propTypes = {
-  files: PropTypes.array
+  files: PropTypes.array,
+  removeFile: PropTypes.func
 }
 
 export default Images

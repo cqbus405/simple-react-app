@@ -22,7 +22,7 @@ class CreateProductForm extends Component {
   }
 
   render() {
-    const { status, errMsg, btnNames, createProduct, goBack, editProduct, product } = this.props
+    const { status, errMsg, btnNames, createProduct, goBack, editProduct, product, addFile, files, removeFile } = this.props
 
     let editedProduct = {
       name: this.state.name,
@@ -56,7 +56,7 @@ class CreateProductForm extends Component {
           <br />
           <textarea name="specification" placeholder="Specification" onChange={this.handleSpecificationChange} defaultValue={specification ? specification : ''} />
           <div className="create-product-form-title">Pictures and video</div>
-          <FileUploadForm fileUploadConfig={imageUploadConfig} />
+          <FileUploadForm fileUploadConfig={imageUploadConfig} addFile={addFile} files={files} removeFile={removeFile} />
           <input type="text" name="video_url" placeholder="Video url" onChange={this.handleVideoUrlChange} defaultValue={videoUrl ? videoUrl : ''} />
         </form>
         {status === 500 ? <ErrorMessage errorMsg={errMsg} /> : null}
@@ -97,7 +97,10 @@ CreateProductForm.propTypes = {
   createProduct: PropTypes.func,
   goBack: PropTypes.func,
   editProduct: PropTypes.func,
-  product: PropTypes.object
+  product: PropTypes.object,
+  addFile: PropTypes.func,
+  files: PropTypes.array,
+  removeFile: PropTypes.func
 }
 
 export default CreateProductForm

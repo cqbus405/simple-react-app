@@ -22,7 +22,7 @@ class CreateProductPage extends Component {
 
 CreateProductPage.propTypes = {
   createProduct: PropTypes.func,
-  errMsg: PropTypes.string
+  errMsg: PropTypes.string,
 }
 
 const mapStateToProps = state => {

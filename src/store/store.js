@@ -16,6 +16,9 @@ import {
   captcha
 } from '../reducers/reducer-captcha'
 import {
+  file
+} from '../reducers/reducer-file'
+import {
   combineReducers
 } from 'redux'
 
@@ -30,7 +33,8 @@ const rootReducer = combineReducers({
   user,
   products,
   product,
-  captcha
+  captcha,
+  file
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

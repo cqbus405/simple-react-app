@@ -2,25 +2,22 @@ import React, { Component, PropTypes } from 'react'
 import Dropzone from 'react-dropzone'
 import Images from './Images'
 import ic_circle_image from '../../../public/images/ic_image.svg'
+import { setFile } from '../../utils/util-file'
 
 class FileUploadForm extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      files: []
-    }
-
     this.onFileDrop = this.onFileDrop.bind(this)
   }
 
   render() {
-    const { fileUploadConfig } = this.props
+    const { fileUploadConfig, files, removeFile } = this.props
 
     return (
       <div>
-        {this.state.files.length > 0 
-          ? <Images files={this.state.files} />
+        {files.length > 0 
+          ? <Images files={files} removeFile={removeFile} />
           : null
         }
         <Dropzone
@@ -28,7 +25,7 @@ class FileUploadForm extends Component {
           multiple={fileUploadConfig.multiple}
           accept={fileUploadConfig.accept}
           onDrop={this.onFileDrop}>
-          <img src={ic_circle_image} alt="ic_circle_image" />
+          <img src={ic_circle_image} alt="img" />
           <p>Drag & Drop</p>
         </Dropzone>
       </div>
@@ -36,16 +33,20 @@ class FileUploadForm extends Component {
   }
 
   onFileDrop(acceptedFiles, rejectedFiles) {
-    console.log('Accepted files: ', acceptedFiles);
-    console.log('Rejected files: ', rejectedFiles);
-    this.setState({
-      files: acceptedFiles
-    })
+    const { addFile, files } = this.props
+
+    let filesToAdd = files.concat(acceptedFiles)
+
+    addFile(filesToAdd) // store to redux
+    setFile(filesToAdd) // store to client
   }
 }
 
 FileUploadForm.propTypes = {
-  fileUploadConfig: PropTypes.object
+  fileUploadConfig: PropTypes.object,
+  addFile: PropTypes.func,
+  files: PropTypes.array,
+  removeFile: PropTypes.func
 }
 
 export default FileUploadForm
