@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { setFile } from '../../utils/util-file'
 import ic_close from '../../../public/images/ic_close.svg'
 
 class Image extends Component {
@@ -21,9 +22,11 @@ class Image extends Component {
 
   _removeFile() {
     const { removeFile, index, files } = this.props
-    let filesToStore = files
+    let filesToStore = files.slice() // important !!! 不能对files直接进行修改，否则页面不会局部渲染。
     filesToStore.splice(index, 1)
+    
     removeFile(filesToStore)
+    setFile(filesToStore)
   }
 }
 

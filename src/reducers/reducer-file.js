@@ -27,7 +27,7 @@ export const file = (state = {
     case HANDLE_ADD_FILE_ERROR:
       return {
         ...state,
-        msg: 'add files failed'
+        msg: action.msg
       }
 
     case HANDLE_REMOVE_FILE_ERROR:

@@ -5,6 +5,7 @@ import { fetchProductIfNeeded, deleteProductIfNeeded } from '../actions/action-p
 import { getUserInfo } from '../utils/util-auth'
 import { getProductInfo, setProductInfo } from '../utils/util-product'
 import { redirectTo } from '../utils/util-general'
+import { getFile } from '../utils/util-file'
 import pic_android from '../../public/images/pic_android.jpg'
 import pic_android2 from '../../public/images/pic_android2.jpg'
 import pic_dota from '../../public/images/pic_dota.jpg'
@@ -15,18 +16,7 @@ class ProductPage extends Component {
   render() {
     const { product, deleteProduct } = this.props
 
-    const imgArr = [
-      pic_android,
-      pic_android2,
-      pic_dota,
-      pic_jinx,
-      pic_jinx2,
-      pic_android,
-      pic_android2,
-      pic_dota,
-      pic_jinx,
-      pic_jinx2
-    ]
+    const imgArr = getFile()
 
     return (
       <div>

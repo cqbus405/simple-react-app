@@ -16,7 +16,7 @@ class FileUploadForm extends Component {
 
     return (
       <div>
-        {files.length > 0 
+        {files && files.length > 0 
           ? <Images files={files} removeFile={removeFile} />
           : null
         }
@@ -32,10 +32,19 @@ class FileUploadForm extends Component {
     )
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
+  }
+
   onFileDrop(acceptedFiles, rejectedFiles) {
     const { addFile, files } = this.props
 
     let filesToAdd = files.concat(acceptedFiles)
+    const arrLength = filesToAdd.length
+
+    if (arrLength > 9) {
+      filesToAdd.splice(9, arrLength - 9)
+    }
 
     addFile(filesToAdd) // store to redux
     setFile(filesToAdd) // store to client
@@ -50,4 +59,3 @@ FileUploadForm.propTypes = {
 }
 
 export default FileUploadForm
-

@@ -24,3 +24,21 @@ $open-sans: 'Open Sans', sans-serif;
     color: rgba(255, 255, 255, 0.54);
   }
 }
+
+@media only screen and (max-width: 700px) {
+  .buttons {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 900px) {
+  .buttons {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1150px) {
+  .buttons {
+    width: 60%;
+  }
+}

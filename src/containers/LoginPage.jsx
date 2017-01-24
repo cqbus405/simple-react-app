@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import { doLoginIfNeeded } from '../actions/action-user'
 import { getVerificationCodeIfNeeded } from '../actions/action-captcha'
 import ic_love from '../../public/images/ic_love.svg'
+import bg_engineer from '../../public/images/bg_engineer.jpg'
 
 class LoginPage extends Component {
   render() {
@@ -26,6 +27,7 @@ class LoginPage extends Component {
           <div className="login-page-flex-text">
             M<b className="mark-style">a</b>n<b className="mark-style">a</b>gement<br/>S<b className="mark-style">y</b>stem
           </div>
+          <img src={bg_engineer} alt="bg_engineer" />
         </div>
       </div>
     )
