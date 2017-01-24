@@ -6,11 +6,11 @@ import { getUserInfo } from '../utils/util-auth'
 import { getProductInfo, setProductInfo } from '../utils/util-product'
 import { redirectTo } from '../utils/util-general'
 import { getFile } from '../utils/util-file'
-import pic_android from '../../public/images/pic_android.jpg'
-import pic_android2 from '../../public/images/pic_android2.jpg'
-import pic_dota from '../../public/images/pic_dota.jpg'
-import pic_jinx from '../../public/images/pic_jinx.jpeg'
-import pic_jinx2 from '../../public/images/pic_jinx2.jpeg'
+// import pic_android from '../../public/images/pic_android.jpg'
+// import pic_android2 from '../../public/images/pic_android2.jpg'
+// import pic_dota from '../../public/images/pic_dota.jpg'
+// import pic_jinx from '../../public/images/pic_jinx.jpeg'
+// import pic_jinx2 from '../../public/images/pic_jinx2.jpeg'
 
 class ProductPage extends Component {
   render() {

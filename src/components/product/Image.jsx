@@ -6,9 +6,7 @@ class Image extends Component {
 
     return (
       <div className="product-image-container">
-        <a>
-          <img src={img} alt="img" />
-        </a>
+        <img src={img} alt="img" />
       </div>
     )
   }
