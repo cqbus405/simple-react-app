@@ -1,14 +1,13 @@
 .file-upload-form-images-container {
   display: flex;
-  flex-flow: row wrap;
-  margin-bottom: 2px;
+  flex-flow: row wrap;    
+  justify-content: flex-start;
+  margin-bottom: 1%;
+  padding: 0 1px;
 
   .file-upload-form-image-container {
-    max-width: 23%;
+    width: 24%;
     margin: 2px;
-    flex-grow: 1;
-    justify-content: flex-start;
-    opacity: 0.8;
     transition: opacity 0.4s;
 
     .file-upload-form-image-style {
@@ -24,7 +23,7 @@
   }
 
   .file-upload-form-image-container:hover {
-    opacity: 1;
+    opacity: 0.8;
   }
 
   .file-upload-form-image-container:hover .file-upload-form-image-close {

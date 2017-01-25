@@ -7,7 +7,7 @@ $open-sans: 'Open Sans', sans-serif;
 $montserrat: 'Montserrat', sans-serif;
 
 .product-container {
-  
+  height: 100%;
 }
 
 .product-btns {
@@ -34,7 +34,9 @@ $montserrat: 'Montserrat', sans-serif;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
-  height: 500px;
+  width: 90%;
+  height: 100%;
+  margin: auto;
 }
 
 .product-inner-image-container {
@@ -47,28 +49,26 @@ $montserrat: 'Montserrat', sans-serif;
 }
 
 .product-image-container {
-  flex-grow: 1;
-  width: 23%;
+  max-width: 30%;
   margin: 0 2px 2px;
-  cursor: pointer;
 
   img {
     width: 100%;
-    opacity: 0.8;
     transition: opacity 0.4s;
+    cursor: pointer;
   }
 
   img:hover {
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
 .product-item-container {
-  width: 30%;
+  width: 24%;
   margin: 0 12px 16px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 1);
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .product-responsive-title {
@@ -117,8 +117,35 @@ $montserrat: 'Montserrat', sans-serif;
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) {
+  .product-btns {
+    text-align: center;
+  }
+
   .product-inner-container {
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-item-container {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 750px) {
+  .product-image-container {
+    width: 23%;
+  }  
+
+   .product-btns {
+    text-align: center;
+  }
+
+  .product-inner-container {
+    width: auto;
     height: auto;
     justify-content: center;
     align-items: center;
@@ -126,5 +153,28 @@ $montserrat: 'Montserrat', sans-serif;
 
   .product-item-container {
     width: 90%;
+    border-radius: 5px;
+  } 
+}
+
+@media only screen and (min-width: 751px) and (max-width: 900px) {
+  .product-image-container {
+    width: 19%;
+  }  
+
+  .product-btns {
+    text-align: center;
   }
+
+  .product-inner-container {
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-item-container {
+    width: 85%;
+    border-radius: 5px;
+  } 
 }

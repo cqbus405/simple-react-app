@@ -76,5 +76,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(LoginPage)
-
-// <img src={bg_nyc} alt="bg_nyc" />

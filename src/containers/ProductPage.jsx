@@ -19,13 +19,15 @@ class ProductPage extends Component {
     const imgArr = getFile()
 
     return (
-      <div>
+      <div id="product">
         {product ? <ProductElement product={product} deleteProduct={deleteProduct} redirectTo={redirectTo} imgArr={imgArr} /> : null}
       </div>
     )
   }
 
   componentDidMount() {
+    document.getElementById('root').className='root'
+
     const { fetchProduct, params } = this.props
     let id = params.id
     if (!id) {
@@ -37,6 +39,10 @@ class ProductPage extends Component {
     }
     const token = getUserInfo().token
     fetchProduct(id, token)
+  }
+
+  componentWillUnmount() {
+    document.getElementById('root').className=''
   }
 }
 
