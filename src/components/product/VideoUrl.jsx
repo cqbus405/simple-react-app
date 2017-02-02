@@ -5,7 +5,7 @@ class VideoUrl extends Component {
     const { videoUrl } = this.props
 
     return (
-      <div className="product-item-container">
+      <div className="product-list-item">
         <p className="product-responsive-title">Video Url</p>
         <p className="product-responsive-link"><a href={videoUrl}>{videoUrl}</a></p>
       </div>

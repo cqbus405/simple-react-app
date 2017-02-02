@@ -5,7 +5,7 @@ class GeneralInfo extends Component {
     const { generalInfo } = this.props
 
     return (
-      <div className="product-item-container">
+      <div className="product-list-item">
         <p className="product-responsive-title">General</p>
         <div className="product-responsive-content">
           <div><b>Title</b>: {generalInfo.name}</div>

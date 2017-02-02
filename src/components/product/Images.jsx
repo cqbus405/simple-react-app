@@ -6,7 +6,7 @@ class Images extends Component {
     const { imgArr } = this.props
 
     return (
-      <div className="product-item-container">
+      <div className="product-list-item">
         <p className="product-responsive-title">Pictures</p>
         <div className="product-inner-image-container">
           {imgArr ? imgArr.map((img, key) => <Image img={img.preview} key={key} />) : null}

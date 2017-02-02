@@ -39,13 +39,22 @@ class ProductElement extends Component {
           <input src={ic_edit2} type="image" onClick={() => redirectTo('/product/edit')} />
           <input src={ic_delete} type="image" onClick={() => deleteProduct(id, token)} />
         </div>
-        <ul className="product-inner-container">
-          <li><GeneralInfo generalInfo={generalInfoObj} /></li>
-          <li><Images imgArr={imgArr} /></li>
-          <li><VideoUrl videoUrl={videoUrl} /></li>
-          <li><Description description={description} /></li>
-          <li><Specification specification={specification} /></li>
-        </ul>
+        <div className="product-inner-container">
+          <div className="product-inner-container2">
+            <div className="product-inner-container3">
+              <div className="product-inner-container4">
+                  <div className="product-inner-container5">
+                    <div className="product-item-container"><GeneralInfo generalInfo={generalInfoObj} /></div>
+                    <div className="product-item-container"><Images imgArr={imgArr} /></div>
+                    <div className="product-item-container"><VideoUrl videoUrl={videoUrl} /></div>
+                    <div className="product-item-container"><Description description={description} /></div>
+                    <div className="product-item-container"><Specification specification={specification} /></div>
+                    <div className="product-item-container"><div className="product-item-container-add-btn">Add new tag...</div></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
