@@ -39,13 +39,13 @@ class ProductElement extends Component {
           <input src={ic_edit2} type="image" onClick={() => redirectTo('/product/edit')} />
           <input src={ic_delete} type="image" onClick={() => deleteProduct(id, token)} />
         </div>
-        <div className="product-inner-container">
-          <GeneralInfo generalInfo={generalInfoObj} />
-          <Images imgArr={imgArr} />
-          <VideoUrl videoUrl={videoUrl} />
-          <Description description={description} />
-          <Specification specification={specification} />
-        </div>
+        <ul className="product-inner-container">
+          <li><GeneralInfo generalInfo={generalInfoObj} /></li>
+          <li><Images imgArr={imgArr} /></li>
+          <li><VideoUrl videoUrl={videoUrl} /></li>
+          <li><Description description={description} /></li>
+          <li><Specification specification={specification} /></li>
+        </ul>
       </div>
     )
   }
