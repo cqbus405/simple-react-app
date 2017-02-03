@@ -81,7 +81,8 @@ $montserrat: 'Montserrat', sans-serif;
   color: rgba(0, 0, 0, 0.87);
   margin: 0;
   padding: 16px;
-  border-bottom: 3px solid rgba(238, 238, 238, 1);
+  border-bottom: 1.5px solid rgba(255, 153, 204, 0.5);
+  // border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
 }
 
 .product-responsive-content {
@@ -115,7 +116,8 @@ $montserrat: 'Montserrat', sans-serif;
 }
 
 .product-responsive-link {
-  padding: 0 5% 3%;
+    margin: 0;
+    padding: 16px;
 
   a {
     font-family: $open-sans;
