@@ -5,9 +5,9 @@ $open-sans: 'Open Sans', sans-serif;
 
 .products-table {
   overflow-x: auto;
-  margin: 24px;
+  margin: 64px 20%;
   // border: 1px solid rgba(0, 0, 0, 0.26);
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  // box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
 
   table {
     border-collapse: collapse;
@@ -17,7 +17,7 @@ $open-sans: 'Open Sans', sans-serif;
     th {
       text-align: left;
       padding: 16px;
-      font-size: 0.75em;
+      font-size: 0.875em;
       color: rgba(0, 0, 0, 0.87);
       font-family: $roboto;
     }
@@ -25,17 +25,21 @@ $open-sans: 'Open Sans', sans-serif;
     td {
       text-align: left;
       padding: 16px;
-      font-size: 0.75em;
+      font-size: 0.875em;
       font-family: $open-sans;
       color: rgba(0, 0, 0, 0.54);
     }
 
-    tr:nth-child(even) {
-      background-color: rgba(3, 169, 244, 0.26);
+    tr {
+      border-bottom: 1px solid rgba(229, 229, 229, 1);
     }
 
-    tr:nth-child(1) {
-      background-color: rgba(255, 255, 255, 1);
-    }
+    // tr:nth-child(even) {
+    //   background-color: rgba(3, 169, 244, 0.26);
+    // }
+
+    // tr:nth-child(1) {
+    //   background-color: rgba(255, 255, 255, 1);
+    // }
   }
 }

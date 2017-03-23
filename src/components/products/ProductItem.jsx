@@ -11,6 +11,7 @@ class ProductItem extends Component {
       <tr>
         <td>{product.id}</td>
         <td>{product.name}</td>
+        <td></td>
         <td>{product.created}</td>
         <td>{product.modified}</td>
         <td>

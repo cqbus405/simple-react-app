@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Roboto:400');
 
 $open-sans: 'Open Sans', sans-serif;
+$roboto: 'Roboto', sans-serif;
 
 .pagination {
   width: 80%;
@@ -18,20 +19,24 @@ $open-sans: 'Open Sans', sans-serif;
       button {
         width: 32px;
         height: 32px;
-        margin: 1px;
-        font-size: 0.875em;
-        font-family: $open-sans;
-        color: rgba(0, 0, 0, 0.54);
+        margin: 0 6px ;
+        font-size: 0.75em;
+        // font-family: $open-sans;
+        font-family: $roboto;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.87);
         float: left;
         text-decoration: none;
         border: none;
         background-color: transparent;
         outline: none;
         transition: background-color .4s;
+        border-radius: 50%;
       }
 
       button.active {
-        background-color: rgb(255, 153, 204);
+        // background-color: rgb(255, 153, 204);
+        background-color: rgba(0, 0, 0, .8);
         color: rgba(255, 255, 255, 0.87);
       }
 

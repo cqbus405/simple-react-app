@@ -11,7 +11,8 @@ class ProductsTable extends Component {
           <tbody>
             <tr>
               <th>Id</th>
-              <th>Name</th>
+              <th>Title</th>
+              <th>Type</th>
               <th>Created</th>
               <th>Modified</th>
               <th></th>
