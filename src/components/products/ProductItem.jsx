@@ -10,10 +10,10 @@ class ProductItem extends Component {
     return (
       <tr>
         <td>{product.id}</td>
-        <td>{product.name}</td>
-        <td></td>
+        <td>{product.title}</td>
+        <td>{product.type}</td>
         <td>{product.created}</td>
-        <td>{product.modified}</td>
+        <td>{product.status}</td>
         <td>
           <Link className='products-link' to={url}><img src={ic_edit} alt="ic_edit" /></Link>
         </td>

@@ -24,7 +24,7 @@ $roboto: 'Roboto', sans-serif;
         // font-family: $open-sans;
         font-family: $roboto;
         font-weight: 600;
-        color: rgba(0, 0, 0, 0.87);
+        color: rgba(0, 0, 0, 0.54);
         float: left;
         text-decoration: none;
         border: none;
@@ -36,7 +36,7 @@ $roboto: 'Roboto', sans-serif;
 
       button.active {
         // background-color: rgb(255, 153, 204);
-        background-color: rgba(0, 0, 0, .8);
+        background-color: rgba(166, 137, 124, 1);
         color: rgba(255, 255, 255, 0.87);
       }
 

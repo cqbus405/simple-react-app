@@ -11,6 +11,25 @@ class Header extends Component {
     const name = getUserInfo().name
     const url = '/product/create'
 
+    // return (
+    //   <ul className="header-style">
+    //     <li>
+    //       <img className="header-avatar" src={pic_jinx} alt="pic_jinx" />
+    //     </li>
+    //     <li>
+    //       <div className="header-name">{name}</div>
+    //     </li>
+    //     <li style={{float: "right"}}>
+    //       <div className="header-action-container">
+    //         <Link className="header-create-btn" to={url}>
+    //           <img src={ic_create} alt="ic_create" />
+    //         </Link>  
+    //         <input className="header-logout-btn" onClick={handleLogoutBtnClick} type="image" src={ic_quit} />
+    //       </div>
+    //     </li>
+    //   </ul>
+    // )
+
     return (
       <ul className="header-style">
         <li>

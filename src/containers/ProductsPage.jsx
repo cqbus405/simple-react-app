@@ -52,7 +52,7 @@ ProductsPage.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    products: state.products.data ? state.products.data.products : null,
+    products: state.products.data ? state.products.data.documents : null,
     pages: state.products.data ? state.products.data.pages : 0,
     fetching: state.products.isFetching
   }

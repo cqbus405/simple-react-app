@@ -9,7 +9,7 @@ const fetchProducts = params => dispatch => {
   const page = params.page
   const count = params.count
   const token = params.token
-  const url = `${api.ENDPOINT_PRODUCT_LIST}?page_item_count=${count}&page_number=${page}`
+  const url = `${api.ENDPOINT_DOCUMENT_LIST}?page_item_count=${count}&page_number=${page}`
 
   return fetch(url, {
       method: 'GET',

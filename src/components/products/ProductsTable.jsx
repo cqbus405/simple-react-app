@@ -10,11 +10,11 @@ class ProductsTable extends Component {
         <table>
           <tbody>
             <tr>
-              <th>Id</th>
-              <th>Title</th>
-              <th>Type</th>
-              <th>Created</th>
-              <th>Modified</th>
+              <th>ID</th>
+              <th>TITLE</th>
+              <th>TYPE</th>
+              <th>CREATED</th>
+              <th>STATUS</th>
               <th></th>
             </tr>
             {products ? products.map((product, id) => <ProductItem key={id} product={product} />) : null}
